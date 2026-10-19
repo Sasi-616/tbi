@@ -176,17 +176,17 @@ body {
 .nav-container-pill {
   background-color: #FFFFFF !important;
   border: 1px solid rgba(226, 232, 240, 0.95);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.07), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
-  border-radius: 14px !important;
+  box-shadow: 0 6px 24px -2px rgba(0, 0, 0, 0.09), 0 2px 8px -1px rgba(0, 0, 0, 0.04);
+  border-radius: 16px !important;
   transition: all 0.3s ease;
   pointer-events: auto;
 }
 
 .site-header.scrolled .nav-container-pill {
-  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.12), 0 4px 8px -2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.14), 0 4px 10px -2px rgba(0, 0, 0, 0.05);
   border-color: rgba(203, 213, 225, 1);
   background-color: #FFFFFF !important;
-  border-radius: 14px !important;
+  border-radius: 16px !important;
 }
 
 /* Nav Link Inside Container (Rectangular Curved Tabs) */
@@ -196,23 +196,23 @@ body {
   align-items: center;
   color: #1E293B !important;
   text-shadow: none !important;
-  font-weight: 600;
-  font-size: 13px;
-  padding: 0.4rem 0.65rem;
-  border-radius: 8px !important;
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px !important;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .nav-link:hover {
   color: #FF6F00 !important;
-  background-color: rgba(255, 111, 0, 0.06);
+  background-color: rgba(255, 111, 0, 0.08);
 }
 
 .nav-link.active {
   color: #FF6F00 !important;
-  font-weight: 700;
-  background-color: rgba(255, 111, 0, 0.09);
+  font-weight: 800;
+  background-color: rgba(255, 111, 0, 0.12);
 }
 
 .nav-link::after {

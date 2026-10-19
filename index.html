@@ -153,24 +153,24 @@
 
   <!-- Main Sticky Floating Capsule Navigation Header -->
     <!-- Floating Capsule Container Navbar (Container Only, No Text Icons, No Background Overflow) -->
-  <header class="site-header sticky top-2 sm:top-2.5 z-50 px-3 sm:px-6 transition-all duration-300">
-    <div class="max-w-6xl mx-auto nav-container-pill px-3.5 sm:px-4 py-1.5 sm:py-2 transition-all">
-      <div class="flex items-center justify-between gap-3">
+  <header class="site-header sticky top-2 sm:top-3 z-50 px-3 sm:px-6 transition-all duration-300">
+    <div class="max-w-7xl mx-auto nav-container-pill px-4 sm:px-6 lg:px-7 py-2.5 sm:py-3.5 transition-all">
+      <div class="flex items-center justify-between gap-4">
         
-        <!-- Left: Official Logos with Vertical Divider -->
-        <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
-          <a href="index.html" class="flex items-center gap-2 group focus:outline-none" aria-label="Vignan TBI">
-            <img src="assets/Logo.png" alt="Vignan TBI Logo" class="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105">
-            <div class="h-5 w-px bg-slate-200 hidden sm:block"></div>
-            <img src="assets/logos/DST.png" alt="DST Govt. of India" class="h-6 sm:h-7 w-auto object-contain hidden sm:block">
+        <!-- Left: Official Logos with Vertical Divider (Prominent Institutional Size) -->
+        <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+          <a href="index.html" class="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-none" aria-label="Vignan TBI">
+            <img src="assets/Logo.png" alt="Vignan TBI Logo" class="h-11 sm:h-13 lg:h-14 xl:h-15 w-auto object-contain transition-transform group-hover:scale-105">
+            <div class="h-8 sm:h-9 w-px bg-slate-300 hidden sm:block"></div>
+            <img src="assets/logos/DST.png" alt="DST Govt. of India" class="h-8 sm:h-10 lg:h-11 w-auto object-contain hidden sm:block">
           </a>
         </div>
 
         <!-- Vertical Divider -->
-        <div class="h-5 w-px bg-slate-200 hidden lg:block shrink-0"></div>
+        <div class="h-7 w-px bg-slate-200 hidden lg:block shrink-0"></div>
 
         <!-- Center: Clean Text-Only Desktop Navigation Links (Responsive lg:flex) -->
-        <nav class="hidden lg:flex items-center space-x-0.5 xl:space-x-1 font-semibold tracking-tight">
+        <nav class="hidden lg:flex items-center space-x-0.5 xl:space-x-1.5 font-bold tracking-tight">
           <a href="about.html" class="nav-link">About Us</a>
           <a href="programs.html" class="nav-link">Focus Sectors</a>
           <a href="process.html" class="nav-link">Incubation Process</a>
@@ -182,18 +182,18 @@
         </nav>
 
         <!-- Right Header Action -->
-        <div class="hidden sm:flex items-center gap-2 shrink-0">
-          <button data-open-modal="modal-apply-incubation" class="px-3.5 py-1.5 sm:px-4 sm:py-2 bg-brand-orange hover:bg-brand-accent text-white text-xs font-bold rounded-xl transition shadow-sm hover:shadow-orange-500/25 flex items-center gap-1.5">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        <div class="hidden sm:flex items-center gap-3 shrink-0">
+          <button data-open-modal="modal-apply-incubation" class="px-5 py-2.5 sm:px-6 sm:py-3 bg-brand-orange hover:bg-brand-accent text-white text-xs sm:text-sm font-extrabold rounded-xl transition shadow-md hover:shadow-orange-500/30 flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
             <span>Apply Now</span>
           </button>
         </div>
 
         <!-- Mobile Menu Toggle Button -->
-        <button id="mobileToggle" class="mobile-toggle lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-1 focus:outline-none p-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition" aria-label="Toggle Navigation">
-          <span class="w-4 h-0.5 bg-slate-800 rounded-full"></span>
-          <span class="w-4 h-0.5 bg-slate-800 rounded-full"></span>
-          <span class="w-4 h-0.5 bg-slate-800 rounded-full"></span>
+        <button id="mobileToggle" class="mobile-toggle lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus:outline-none p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition" aria-label="Toggle Navigation">
+          <span class="w-5 h-0.5 bg-slate-800 rounded-full"></span>
+          <span class="w-5 h-0.5 bg-slate-800 rounded-full"></span>
+          <span class="w-5 h-0.5 bg-slate-800 rounded-full"></span>
         </button>
 
       </div>
