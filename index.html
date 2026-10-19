@@ -44,9 +44,22 @@
   </script>
 
   <!-- Custom Stylesheet (smgpl Architecture) with Cache Buster -->
-  <link rel="stylesheet" href="css/style.css?v=2.1">
+  <link rel="stylesheet" href="css/style.css?v=2.2">
 
   <style>
+    /* Full-Page Hero Viewport Lock: Image fills 100% of the screen */
+    .hero-slider-section {
+      width: 100% !important;
+      min-height: calc(100vh - 38px) !important;
+      height: calc(100vh - 38px) !important;
+    }
+    @media (max-width: 640px) {
+      .hero-slider-section {
+        min-height: calc(100dvh - 42px) !important;
+        height: auto !important;
+      }
+    }
+
     /* Absolute Slider Safety: ONLY ONE slide can ever take layout space or be visible */
     .hero-text-slider-wrapper {
       position: relative;
@@ -215,8 +228,8 @@
     </div>
   </header>
 
-      <!-- 1. Hero Section (Synchronized Auto-Rotating Image & Text Slider, Flush with Top Bar) -->
-  <section id="heroSlider" class="hero-slider-section relative min-h-[620px] sm:min-h-[680px] lg:min-h-[720px] flex items-end pb-8 sm:pb-12 -mt-20 sm:-mt-24 pt-36 sm:pt-44 lg:pt-48 overflow-hidden text-white" aria-label="Hero Innovation Showcase">
+      <!-- 1. Hero Section (Full-Viewport Synchronized Auto-Rotating Image & Text Showcase) -->
+  <section id="heroSlider" class="hero-slider-section relative w-full h-[calc(100vh-38px)] min-h-[680px] sm:min-h-[720px] lg:min-h-[780px] flex items-end pb-10 sm:pb-14 lg:pb-16 -mt-20 sm:-mt-24 pt-36 sm:pt-44 lg:pt-48 overflow-hidden text-white" aria-label="Hero Innovation Showcase">
     
     <!-- Dynamic Background Image Slides (Pure high-clarity photos, no black wash) -->
     <div class="hero-bg-container absolute inset-0 z-0 overflow-hidden">
@@ -370,11 +383,17 @@
         </div>
       </div>
 
+      <!-- Subtle Scroll Down Indicator -->
+      <a href="#statsBar" class="absolute bottom-6 right-6 sm:right-10 hidden sm:flex items-center gap-2 text-white/80 hover:text-white text-xs font-semibold tracking-wider uppercase transition z-20 bg-black/40 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-md">
+        <span>Explore Ecosystem</span>
+        <i data-lucide="chevron-down" class="w-4 h-4 animate-bounce text-brand-orange"></i>
+      </a>
+
     </div>
   </section>
 
   <!-- 3. Key Metrics / Stats Bar (Pristine Light-Themed Showcase) -->
-  <section class="stats-bar-section relative pt-8 pb-14 sm:pt-10 sm:pb-16 overflow-hidden text-slate-900 border-b border-slate-200" style="background: radial-gradient(ellipse 90% 60% at 50% -10%, rgba(37, 99, 235, 0.05), transparent 70%), radial-gradient(ellipse 70% 50% at 50% 120%, rgba(59, 130, 246, 0.04), transparent 70%), #F8FAFC;">
+  <section id="statsBar" class="stats-bar-section relative pt-8 pb-14 sm:pt-10 sm:pb-16 overflow-hidden text-slate-900 border-b border-slate-200" style="background: radial-gradient(ellipse 90% 60% at 50% -10%, rgba(37, 99, 235, 0.05), transparent 70%), radial-gradient(ellipse 70% 50% at 50% 120%, rgba(59, 130, 246, 0.04), transparent 70%), #F8FAFC;">
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
