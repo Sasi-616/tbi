@@ -43,8 +43,36 @@
     }
   </script>
 
-  <!-- Custom Stylesheet (smgpl Architecture) -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Custom Stylesheet (smgpl Architecture) with Cache Buster -->
+  <link rel="stylesheet" href="css/style.css?v=2.1">
+
+  <style>
+    /* Absolute Slider Safety: ONLY ONE slide can ever take layout space or be visible */
+    .hero-text-slider-wrapper {
+      position: relative;
+      min-height: 220px;
+    }
+    .hero-text-slide {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      pointer-events: none !important;
+      transform: translateY(8px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+    .hero-text-slide.active {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      position: relative !important;
+      pointer-events: auto !important;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body class="font-montserrat bg-brand-light text-brand-black antialiased selection:bg-brand-orange selection:text-white">
 
@@ -188,7 +216,7 @@
   </header>
 
       <!-- 1. Hero Section (Synchronized Auto-Rotating Image & Text Slider, Flush with Top Bar) -->
-  <section id="heroSlider" class="hero-slider-section relative min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-end pb-6 sm:pb-8 -mt-20 sm:-mt-24 pt-28 sm:pt-32 lg:pt-36 overflow-hidden text-white" aria-label="Hero Innovation Showcase">
+  <section id="heroSlider" class="hero-slider-section relative min-h-[620px] sm:min-h-[680px] lg:min-h-[720px] flex items-end pb-8 sm:pb-12 -mt-20 sm:-mt-24 pt-36 sm:pt-44 lg:pt-48 overflow-hidden text-white" aria-label="Hero Innovation Showcase">
     
     <!-- Dynamic Background Image Slides (Pure high-clarity photos, no black wash) -->
     <div class="hero-bg-container absolute inset-0 z-0 overflow-hidden">
@@ -213,121 +241,126 @@
     </div>
 
     <!-- Hero Content Container (No containers, pure transparent overlay) -->
-    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-16 sm:pt-20">
       <div class="max-w-3xl">
 
-        <!-- Slide Content 0: Incubation Hub (Compact & Bottom-Left Positioned) -->
-        <div class="hero-text-slide active space-y-3 sm:space-y-3.5 max-w-xl" data-slide="0" style="display: block;">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
-            <span class="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
-            <span class="text-brand-orange font-bold uppercase tracking-wider">DST NIDHI Supported</span>
-            <span class="text-gray-400">•</span>
-            <span>VFSTR Guntur</span>
-          </div>
-          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-            DeepTech & Biotech.<br>
-            <span class="text-brand-orange font-extrabold">Built at Vignan TBI.</span>
-          </h1>
-          <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-            Andhra Pradesh's premier university incubator offering world-class labs, mentorship, and seed funding up to ₹50 Lakhs.
-          </p>
-          <div class="flex flex-wrap items-center gap-2.5 pt-1">
-            <button data-open-modal="modal-apply-incubation" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
-              <span>Apply for Incubation</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
-            </button>
-            <a href="facilities.html" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
-              <i data-lucide="microscope" class="w-3.5 h-3.5 text-brand-orange"></i>
-              <span>Explore Labs</span>
-            </a>
-          </div>
-        </div>
+        <!-- Enclosed Slider Wrapper: Only active slide occupies space -->
+        <div class="hero-text-slider-wrapper relative min-h-[250px] sm:min-h-[220px]">
 
-        <!-- Slide Content 1: World-Class Research Labs (Compact & Bottom-Left Positioned) -->
-        <div class="hero-text-slide space-y-3 sm:space-y-3.5 max-w-xl hidden" data-slide="1" style="display: none;">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-            <span class="text-cyan-400 font-bold uppercase tracking-wider">Research & Prototyping</span>
-            <span class="text-gray-400">•</span>
-            <span>Nagarjuna Bhavan</span>
+          <!-- Slide Content 0: Incubation Hub (Compact & Bottom-Left Positioned) -->
+          <div class="hero-text-slide active space-y-3 sm:space-y-3.5 max-w-xl" data-slide="0">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
+              <span class="text-brand-orange font-bold uppercase tracking-wider">DST NIDHI Supported</span>
+              <span class="text-gray-400">•</span>
+              <span>VFSTR Guntur</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+              DeepTech & Biotech.<br>
+              <span class="text-brand-orange font-extrabold">Built at Vignan TBI.</span>
+            </h1>
+            <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+              Andhra Pradesh's premier university incubator offering world-class labs, mentorship, and seed funding up to ₹50 Lakhs.
+            </p>
+            <div class="flex flex-wrap items-center gap-2.5 pt-1">
+              <button data-open-modal="modal-apply-incubation" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
+                <span>Apply for Incubation</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+              </button>
+              <a href="facilities.html" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
+                <i data-lucide="microscope" class="w-3.5 h-3.5 text-brand-orange"></i>
+                <span>Explore Labs</span>
+              </a>
+            </div>
           </div>
-          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-            State-of-the-Art Labs.<br>
-            <span class="text-cyan-400 font-extrabold">From Idea to Market.</span>
-          </h1>
-          <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-            Access 15 university research centers, Supercritical CO2 extraction systems, and rapid IoT Fab Labs.
-          </p>
-          <div class="flex flex-wrap items-center gap-2.5 pt-1">
-            <a href="facilities.html" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
-              <span>Explore All 7 Labs</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
-            </a>
-            <button data-open-modal="modal-book-tour" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
-              <i data-lucide="calendar" class="w-3.5 h-3.5 text-cyan-400"></i>
-              <span>Book Lab Tour</span>
-            </button>
-          </div>
-        </div>
 
-        <!-- Slide Content 2: Startups & Seed Grants (Compact & Bottom-Left Positioned) -->
-        <div class="hero-text-slide space-y-3 sm:space-y-3.5 max-w-xl hidden" data-slide="2" style="display: none;">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span class="text-emerald-400 font-bold uppercase tracking-wider">₹60L+ Grants Deployed</span>
-            <span class="text-gray-400">•</span>
-            <span>Startup Cohorts</span>
+          <!-- Slide Content 1: World-Class Research Labs (Compact & Bottom-Left Positioned) -->
+          <div class="hero-text-slide space-y-3 sm:space-y-3.5 max-w-xl" data-slide="1">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+              <span class="text-cyan-400 font-bold uppercase tracking-wider">Research & Prototyping</span>
+              <span class="text-gray-400">•</span>
+              <span>Nagarjuna Bhavan</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+              State-of-the-Art Labs.<br>
+              <span class="text-cyan-400 font-extrabold">From Idea to Market.</span>
+            </h1>
+            <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+              Access 15 university research centers, Supercritical CO2 extraction systems, and rapid IoT Fab Labs.
+            </p>
+            <div class="flex flex-wrap items-center gap-2.5 pt-1">
+              <a href="facilities.html" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
+                <span>Explore All 7 Labs</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+              </a>
+              <button data-open-modal="modal-book-tour" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
+                <i data-lucide="calendar" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Book Lab Tour</span>
+              </button>
+            </div>
           </div>
-          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-            40+ Startups Scaled.<br>
-            <span class="text-emerald-400 font-extrabold">National Impact.</span>
-          </h1>
-          <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-            Catalyzing student, faculty, and regional ventures with non-dilutive grant funding and pilot networks.
-          </p>
-          <div class="flex flex-wrap items-center gap-2.5 pt-1">
-            <a href="startups.html" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
-              <span>View Startups</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
-            </a>
-            <a href="apply.html" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
-              <i data-lucide="coins" class="w-3.5 h-3.5 text-emerald-400"></i>
-              <span>Apply for Grants</span>
-            </a>
-          </div>
-        </div>
 
-        <!-- Slide Content 3: Elite Mentorship (Compact & Bottom-Left Positioned) -->
-        <div class="hero-text-slide space-y-3 sm:space-y-3.5 max-w-xl hidden" data-slide="3" style="display: none;">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
-            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-            <span class="text-amber-400 font-bold uppercase tracking-wider">60+ Mentors & VCs</span>
-            <span class="text-gray-400">•</span>
-            <span>National Linkages</span>
+          <!-- Slide Content 2: Startups & Seed Grants (Compact & Bottom-Left Positioned) -->
+          <div class="hero-text-slide space-y-3 sm:space-y-3.5 max-w-xl" data-slide="2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span class="text-emerald-400 font-bold uppercase tracking-wider">₹60L+ Grants Deployed</span>
+              <span class="text-gray-400">•</span>
+              <span>Startup Cohorts</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+              40+ Startups Scaled.<br>
+              <span class="text-emerald-400 font-extrabold">National Impact.</span>
+            </h1>
+            <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+              Catalyzing student, faculty, and regional ventures with non-dilutive grant funding and pilot networks.
+            </p>
+            <div class="flex flex-wrap items-center gap-2.5 pt-1">
+              <a href="startups.html" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
+                <span>View Startups</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+              </a>
+              <a href="apply.html" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
+                <i data-lucide="coins" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>Apply for Grants</span>
+              </a>
+            </div>
           </div>
-          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-            Academic Rigor.<br>
-            <span class="text-brand-orange font-extrabold">Industry Mentorship.</span>
-          </h1>
-          <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
-            Guided by distinguished educationists, patent attorneys, and startup operators from leading technology firms.
-          </p>
-          <div class="flex flex-wrap items-center gap-2.5 pt-1">
-            <a href="about.html#team" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
-              <span>Meet Leadership</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
-            </a>
-            <a href="contact.html" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
-              <i data-lucide="user-plus" class="w-3.5 h-3.5 text-amber-400"></i>
-              <span>Join as Mentor</span>
-            </a>
+
+          <!-- Slide Content 3: Elite Mentorship (Compact & Bottom-Left Positioned) -->
+          <div class="hero-text-slide space-y-3 sm:space-y-3.5 max-w-xl" data-slide="3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+              <span class="text-amber-400 font-bold uppercase tracking-wider">60+ Mentors & VCs</span>
+              <span class="text-gray-400">•</span>
+              <span>National Linkages</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+              Academic Rigor.<br>
+              <span class="text-brand-orange font-extrabold">Industry Mentorship.</span>
+            </h1>
+            <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+              Guided by distinguished educationists, patent attorneys, and startup operators from leading technology firms.
+            </p>
+            <div class="flex flex-wrap items-center gap-2.5 pt-1">
+              <a href="about.html#team" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
+                <span>Meet Leadership</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+              </a>
+              <a href="contact.html" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
+                <i data-lucide="user-plus" class="w-3.5 h-3.5 text-amber-400"></i>
+                <span>Join as Mentor</span>
+              </a>
+            </div>
           </div>
+
         </div>
 
       </div>
 
       <!-- Slider Dots Controls -->
-      <div class="mt-2.5 pt-1 flex items-center gap-3 max-w-xl">
+      <div class="mt-4 pt-1 flex items-center gap-3 max-w-xl">
         <div class="flex items-center gap-2.5">
           <button class="hero-slider-dot active w-8 h-2.5 rounded-full bg-brand-orange transition-all duration-300 shadow-sm" data-slide-target="0" aria-label="Slide 1"></button>
           <button class="hero-slider-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white transition-all duration-300" data-slide-target="1" aria-label="Slide 2"></button>
@@ -1544,7 +1577,7 @@
     </button>
   </div>
 
-  <!-- Main JavaScript Engine -->
-  <script src="js/main.js"></script>
+  <!-- Main JavaScript Engine with Cache Buster -->
+  <script src="js/main.js?v=2.1"></script>
 </body>
 </html>
