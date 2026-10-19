@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vignan TBI | Technology Business Incubator · DST NIDHI i-TBI Council</title>
+  <meta name="description" content="Vignan TBI (VFSTR TBI Council) is the DST-supported NIDHI i-TBI at Vadlamudi, Guntur. Incubating deep-tech startups in Agritech, Biotechnology, Clean Energy, Waste Management, and IoT.">
+  <link rel="icon" type="image/png" href="assets/Favicon.png">
+  <link rel="apple-touch-icon" href="assets/Favicon.png">
+
+  <!-- Google Fonts: Montserrat & Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FF6F00',
+              blue: '#1E40AF',
+              black: '#0B0F19',
+              gray: '#1F2937',
+              light: '#F8FAFC',
+              tint: '#FFF4EC',
+              accent: '#E65100',
+              chili: '#1d4ed8'
+            }
+          },
+          fontFamily: {
+            montserrat: ['Montserrat', 'sans-serif'],
+            script: ['Caveat', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet (smgpl Architecture) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-montserrat bg-brand-light text-brand-black antialiased selection:bg-brand-orange selection:text-white">
+
+  <!-- 0. Site Preloader (Pristine Light Theme with Official Asset) -->
+  <div id="sitePreloader" class="site-preloader">
+    <div class="relative flex flex-col items-center">
+      <img src="assets/Preloder.png" alt="Vignan TBI Preloader" class="preloader-img mb-5">
+      <div class="flex items-center gap-2 text-brand-orange font-bold text-xs uppercase tracking-widest">
+        <i data-lucide="sparkles" class="w-4 h-4 animate-spin text-brand-orange"></i>
+        <span>Ignite • Incubate • Accelerate</span>
+      </div>
+      <p class="text-[11px] text-slate-500 mt-2 font-medium">VFSTR TBI Council · DST NIDHI i-TBI</p>
+    </div>
+  </div>
+
+  <!-- Main Sticky Floating Capsule Navigation Header -->
+    <!-- Floating Capsule Container Navbar (Container Only, No Text Icons, No Background Overflow) -->
+  <header class="site-header sticky top-2 sm:top-2.5 z-50 px-3 sm:px-6 transition-all duration-300">
+    <div class="max-w-6xl mx-auto nav-container-pill px-3.5 sm:px-4 py-1.5 sm:py-2 transition-all">
+      <div class="flex items-center justify-between gap-3">
+        
+        <!-- Left: Official Logos with Vertical Divider -->
+        <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <a href="index.html" class="flex items-center gap-2 group focus:outline-none" aria-label="Vignan TBI">
+            <img src="assets/Logo.png" alt="Vignan TBI Logo" class="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105">
+            <div class="h-5 w-px bg-slate-200 hidden sm:block"></div>
+            <img src="assets/logos/DST.png" alt="DST Govt. of India" class="h-6 sm:h-7 w-auto object-contain hidden sm:block">
+          </a>
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="h-5 w-px bg-slate-200 hidden lg:block shrink-0"></div>
+
+        <!-- Center: Clean Text-Only Desktop Navigation Links (Responsive lg:flex) -->
+        <nav class="hidden lg:flex items-center space-x-0.5 xl:space-x-1 font-semibold tracking-tight">
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="programs.html" class="nav-link">Focus Sectors</a>
+          <a href="process.html" class="nav-link">Incubation Process</a>
+          <a href="facilities.html" class="nav-link">Lab Facilities</a>
+          <a href="startups.html" class="nav-link">Startups</a>
+          <a href="events.html" class="nav-link">Events & Spark</a>
+          <a href="apply.html" class="nav-link">Apply</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Right Header Action -->
+        <div class="hidden sm:flex items-center gap-2 shrink-0">
+          <button data-open-modal="modal-apply-incubation" class="px-3.5 py-1.5 sm:px-4 sm:py-2 bg-brand-orange hover:bg-brand-accent text-white text-xs font-bold rounded-full transition shadow-sm hover:shadow-orange-500/25 flex items-center gap-1.5">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Apply Now</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileToggle" class="mobile-toggle lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-1 focus:outline-none p-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition" aria-label="Toggle Navigation">
+          <span class="w-4 h-0.5 bg-slate-800 rounded-full"></span>
+          <span class="w-4 h-0.5 bg-slate-800 rounded-full"></span>
+          <span class="w-4 h-0.5 bg-slate-800 rounded-full"></span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="navMenu" class="nav-menu-drawer xl:hidden">
+      <div class="w-full pb-3 border-b border-gray-100 flex items-center justify-between">
+        <a href="index.html" class="inline-block" aria-label="Vignan TBI Home">
+          <img src="assets/Logo.png" alt="Vignan TBI Logo" class="h-10 sm:h-11 w-auto object-contain">
+        </a>
+      </div>
+      <a href="about.html" class="nav-link text-base font-bold py-1 w-full">About Us</a>
+      <a href="about.html#team" class="nav-link text-base font-bold py-1 w-full">Team & Governance</a>
+      <a href="programs.html" class="nav-link text-base font-bold py-1 w-full">Focus Sectors</a>
+      <a href="process.html" class="nav-link text-base font-bold py-1 w-full">Incubation Process</a>
+      <a href="facilities.html" class="nav-link text-base font-bold py-1 w-full">Lab Facilities</a>
+      <a href="startups.html" class="nav-link text-base font-bold py-1 w-full">Startups</a>
+      <a href="events.html" class="nav-link text-base font-bold py-1 w-full">Events & Spark</a>
+      <a href="apply.html" class="nav-link text-base font-bold py-1 w-full">Apply for Incubation</a>
+      <a href="contact.html" class="nav-link text-base font-bold py-1 w-full">Contact & Location</a>
+      <div class="w-full pt-4 mt-auto border-t border-gray-100 space-y-3">
+        <a href="apply.html" class="w-full py-3 bg-brand-orange text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg">
+          <i data-lucide="rocket" class="w-4 h-4"></i>
+          <span>Apply for Incubation</span>
+        </a>
+        <a href="tel:+918500897550" class="w-full py-2.5 bg-gray-100 text-gray-800 text-xs font-bold rounded-xl flex items-center justify-center gap-2">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-orange"></i>
+          <span>+91 85008 97550</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+      <!-- 1. Hero Section (Synchronized Auto-Rotating Image & Text Slider, No Containers) -->
+  <section id="heroSlider" class="hero-slider-section relative min-h-[540px] sm:min-h-[600px] lg:min-h-[640px] flex items-end pb-5 sm:pb-6 -mt-10 sm:-mt-12 pt-20 sm:pt-24 overflow-hidden text-white" aria-label="Hero Innovation Showcase">
+    
+    <!-- Dynamic Background Image Slides (Pure high-clarity photos, no black wash) -->
+    <div class="hero-bg-container absolute inset-0 z-0 overflow-hidden">
+      <!-- Slide 1 Background (Incubation HQ) -->
+      <div class="hero-slide-bg active" data-slide="0">
+        <img src="assets/website_optimized/dsc05706.jpg" alt="Vignan TBI Incubation Hub" class="w-full h-full object-cover object-center filter brightness-95 contrast-105">
+      </div>
+      <!-- Slide 2 Background (Supercritical CO2 Lab) -->
+      <div class="hero-slide-bg" data-slide="1">
+        <img src="assets/website_optimized/dsc05750.jpg" alt="CSL Supercritical Fluid Extraction Lab" class="w-full h-full object-cover object-[center_35%] filter brightness-95 contrast-105">
+      </div>
+      <!-- Slide 3 Background (Startups Ecosystem) -->
+      <div class="hero-slide-bg" data-slide="2">
+        <img src="assets/website_optimized/dsc05714.jpg" alt="Startups Collaboration Cohort" class="w-full h-full object-cover object-[center_25%] filter brightness-95 contrast-105">
+      </div>
+      <!-- Slide 4 Background (Mentorship at VFSTR) -->
+      <div class="hero-slide-bg" data-slide="3">
+        <img src="assets/website_optimized/dsc05644.jpg" alt="Executive Mentorship at VFSTR" class="w-full h-full object-cover object-[center_20%] filter brightness-95 contrast-105">
+      </div>
+      <!-- Bottom-Left Contrast Scrim for crisp text readability -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent sm:bg-gradient-to-tr sm:from-black/85 sm:via-black/35 sm:to-transparent z-[5] pointer-events-none"></div>
+    </div>
+
+    <!-- Hero Content Container (No containers, pure transparent overlay) -->
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="max-w-3xl">
+
+        <!-- Slide Content 0: Incubation Hub (Compact & Bottom-Left Positioned) -->
+        <div class="hero-text-slide active space-y-3 sm:space-y-3.5 max-w-xl" data-slide="0" style="display: block;">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
+            <span class="text-brand-orange font-bold uppercase tracking-wider">DST NIDHI Supported</span>
+            <span class="text-gray-400">•</span>
+            <span>VFSTR Guntur</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            DeepTech & Biotech.<br>
+            <span class="text-brand-orange font-extrabold">Built at Vignan TBI.</span>
+          </h1>
+          <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+            Andhra Pradesh's premier university incubator offering world-class labs, mentorship, and seed funding up to ₹50 Lakhs.
+          </p>
+          <div class="flex flex-wrap items-center gap-2.5 pt-1">
+            <button data-open-modal="modal-apply-incubation" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
+              <span>Apply for Incubation</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </button>
+            <a href="facilities.html" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
+              <i data-lucide="microscope" class="w-3.5 h-3.5 text-brand-orange"></i>
+              <span>Explore Labs</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide Content 1: World-Class Research Labs (Compact & Bottom-Left Positioned) -->
+        <div class="hero-text-slide space-y-3 sm:space-y-3.5 max-w-xl hidden" data-slide="1" style="display: none;">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <span class="text-cyan-400 font-bold uppercase tracking-wider">Research & Prototyping</span>
+            <span class="text-gray-400">•</span>
+            <span>Nagarjuna Bhavan</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            State-of-the-Art Labs.<br>
+            <span class="text-cyan-400 font-extrabold">From Idea to Market.</span>
+          </h1>
+          <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+            Access 15 university research centers, Supercritical CO2 extraction systems, and rapid IoT Fab Labs.
+          </p>
+          <div class="flex flex-wrap items-center gap-2.5 pt-1">
+            <a href="facilities.html" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
+              <span>Explore All 7 Labs</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </a>
+            <button data-open-modal="modal-book-tour" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
+              <i data-lucide="calendar" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>Book Lab Tour</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Slide Content 2: Startups & Seed Grants (Compact & Bottom-Left Positioned) -->
+        <div class="hero-text-slide space-y-3 sm:space-y-3.5 max-w-xl hidden" data-slide="2" style="display: none;">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="text-emerald-400 font-bold uppercase tracking-wider">₹60L+ Grants Deployed</span>
+            <span class="text-gray-400">•</span>
+            <span>Startup Cohorts</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            40+ Startups Scaled.<br>
+            <span class="text-emerald-400 font-extrabold">National Impact.</span>
+          </h1>
+          <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+            Catalyzing student, faculty, and regional ventures with non-dilutive grant funding and pilot networks.
+          </p>
+          <div class="flex flex-wrap items-center gap-2.5 pt-1">
+            <a href="startups.html" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
+              <span>View Startups</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </a>
+            <a href="apply.html" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
+              <i data-lucide="coins" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <span>Apply for Grants</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Slide Content 3: Elite Mentorship (Compact & Bottom-Left Positioned) -->
+        <div class="hero-text-slide space-y-3 sm:space-y-3.5 max-w-xl hidden" data-slide="3" style="display: none;">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-white/20 text-gray-100 text-[11px] font-semibold backdrop-blur-md shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+            <span class="text-amber-400 font-bold uppercase tracking-wider">60+ Mentors & VCs</span>
+            <span class="text-gray-400">•</span>
+            <span>National Linkages</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            Academic Rigor.<br>
+            <span class="text-brand-orange font-extrabold">Industry Mentorship.</span>
+          </h1>
+          <p class="text-gray-200 text-xs sm:text-sm leading-relaxed max-w-lg font-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+            Guided by distinguished educationists, patent attorneys, and startup operators from leading technology firms.
+          </p>
+          <div class="flex flex-wrap items-center gap-2.5 pt-1">
+            <a href="about.html#team" class="px-4 sm:px-5 py-2 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-orange-500/25 flex items-center gap-1.5 group">
+              <span>Meet Leadership</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </a>
+            <a href="contact.html" class="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-black/40 hover:bg-black/60 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/25 backdrop-blur-md transition flex items-center gap-1.5 shadow-md">
+              <i data-lucide="user-plus" class="w-3.5 h-3.5 text-amber-400"></i>
+              <span>Join as Mentor</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Slider Dots Controls -->
+      <div class="mt-2.5 pt-1 flex items-center gap-3 max-w-xl">
+        <div class="flex items-center gap-2.5">
+          <button class="hero-slider-dot active w-8 h-2.5 rounded-full bg-brand-orange transition-all duration-300 shadow-sm" data-slide-target="0" aria-label="Slide 1"></button>
+          <button class="hero-slider-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white transition-all duration-300" data-slide-target="1" aria-label="Slide 2"></button>
+          <button class="hero-slider-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white transition-all duration-300" data-slide-target="2" aria-label="Slide 3"></button>
+          <button class="hero-slider-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white transition-all duration-300" data-slide-target="3" aria-label="Slide 4"></button>
+          <span id="heroSlideCounter" class="text-xs font-mono font-bold text-gray-300 ml-2">01 / 04</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. Key Metrics / Stats Bar (Pristine Light-Themed Showcase) -->
+  <section class="stats-bar-section relative pt-8 pb-14 sm:pt-10 sm:pb-16 overflow-hidden text-slate-900 border-b border-slate-200" style="background: radial-gradient(ellipse 90% 60% at 50% -10%, rgba(37, 99, 235, 0.05), transparent 70%), radial-gradient(ellipse 70% 50% at 50% 120%, rgba(59, 130, 246, 0.04), transparent 70%), #F8FAFC;">
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header with Trust Signal -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 mb-8 border-b border-slate-200 gap-4">
+        <div class="space-y-1.5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-[11px] font-black uppercase tracking-widest text-brand-orange shadow-2xs">
+            <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+            <span>Ecosystem Track Record</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            High-Impact DeepTech & Bio-Economy Milestones
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 max-w-2xl">
+            Supported by the Department of Science & Technology (DST) with world-class prototyping labs, seed grants, and university research access.
+          </p>
+        </div>
+        
+        <div class="flex items-center gap-2 text-xs font-bold text-slate-700 bg-white border border-slate-200 px-4 py-2 rounded-xl shadow-xs shrink-0">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+          <span>DST NIDHI i-TBI Validated Metrics</span>
+        </div>
+      </div>
+
+      <!-- 6 Metrics Cards Grid (Pristine Light Theme) -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+        
+        <!-- Card 1: Startups Incubated -->
+        <div class="group relative rounded-2xl p-5 bg-white border border-slate-200 hover:border-brand-orange/60 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(37,99,235,0.12)] flex flex-col justify-between overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-24 h-24 bg-blue-500/[0.08] rounded-full blur-2xl group-hover:bg-blue-500/[0.2] transition-all duration-500 pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/70 text-brand-orange flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-2xs">
+                <i data-lucide="rocket" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-50 text-brand-orange border border-blue-200/60">Active</span>
+            </div>
+            <div class="stat-number text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-brand-orange transition-colors" data-counter-target="40" data-counter-suffix="+">40+</div>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800 uppercase tracking-wide">Startups Incubated</p>
+            <p class="text-[11px] text-slate-500 mt-0.5 font-medium leading-tight">DeepTech & Regional</p>
+          </div>
+        </div>
+
+        <!-- Card 2: In Pre-Incubation -->
+        <div class="group relative rounded-2xl p-5 bg-white border border-slate-200 hover:border-amber-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(245,158,11,0.12)] flex flex-col justify-between overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-24 h-24 bg-amber-500/[0.08] rounded-full blur-2xl group-hover:bg-amber-500/[0.2] transition-all duration-500 pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200/70 text-amber-600 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all duration-300 shadow-2xs">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200/60">Pipeline</span>
+            </div>
+            <div class="stat-number text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-amber-600 transition-colors" data-counter-target="93" data-counter-suffix="+">93+</div>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800 uppercase tracking-wide">Pre-Incubation</p>
+            <p class="text-[11px] text-slate-500 mt-0.5 font-medium leading-tight">Early Proof-of-Concepts</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Seed Fund Deployed -->
+        <div class="group relative rounded-2xl p-5 bg-white border border-slate-200 hover:border-emerald-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(16,185,129,0.12)] flex flex-col justify-between overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-24 h-24 bg-emerald-500/[0.08] rounded-full blur-2xl group-hover:bg-emerald-500/[0.2] transition-all duration-500 pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200/70 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-2xs">
+                <i data-lucide="coins" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">Direct Grants</span>
+            </div>
+            <div class="stat-number text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-emerald-600 transition-colors" data-counter-target="60" data-counter-prefix="₹" data-counter-suffix="L+">₹60L+</div>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800 uppercase tracking-wide">Seed Deployed</p>
+            <p class="text-[11px] text-slate-500 mt-0.5 font-medium leading-tight">DST Catalytic Funding</p>
+          </div>
+        </div>
+
+        <!-- Card 4: DST NIDHI Grant -->
+        <div class="group relative rounded-2xl p-5 bg-white border border-slate-200 hover:border-blue-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(59,130,246,0.12)] flex flex-col justify-between overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-24 h-24 bg-blue-500/[0.08] rounded-full blur-2xl group-hover:bg-blue-500/[0.2] transition-all duration-500 pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/70 text-brand-orange flex items-center justify-center group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-2xs">
+                <i data-lucide="landmark" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200/60">Govt. Grant</span>
+            </div>
+            <div class="stat-number text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-brand-orange transition-colors" data-counter-target="4.5" data-counter-prefix="₹" data-counter-suffix=" Cr" data-counter-decimals="1">₹4.5 Cr</div>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800 uppercase tracking-wide">DST-NIDHI i-TBI</p>
+            <p class="text-[11px] text-slate-500 mt-0.5 font-medium leading-tight">Sanctioned Corpus</p>
+          </div>
+        </div>
+
+        <!-- Card 5: Research Centers -->
+        <div class="group relative rounded-2xl p-5 bg-white border border-slate-200 hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(168,85,247,0.12)] flex flex-col justify-between overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-24 h-24 bg-purple-500/[0.08] rounded-full blur-2xl group-hover:bg-purple-500/[0.2] transition-all duration-500 pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200/70 text-purple-600 flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 shadow-2xs">
+                <i data-lucide="microscope" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200/60">Campus CoEs</span>
+            </div>
+            <div class="stat-number text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-purple-600 transition-colors" data-counter-target="15" data-counter-suffix="+">15+</div>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800 uppercase tracking-wide">Research Centers</p>
+            <p class="text-[11px] text-slate-500 mt-0.5 font-medium leading-tight">Biotech, IoT, Energy, Agri</p>
+          </div>
+        </div>
+
+        <!-- Card 6: High-Value Jobs -->
+        <div class="group relative rounded-2xl p-5 bg-white border border-slate-200 hover:border-cyan-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(6,182,212,0.12)] flex flex-col justify-between overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-24 h-24 bg-cyan-500/[0.08] rounded-full blur-2xl group-hover:bg-cyan-500/[0.2] transition-all duration-500 pointer-events-none"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200/70 text-cyan-600 flex items-center justify-center group-hover:bg-cyan-600 group-hover:text-white transition-all duration-300 shadow-2xs">
+                <i data-lucide="users" class="w-5 h-5"></i>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-700 border border-cyan-200/60">Employment</span>
+            </div>
+            <div class="stat-number text-3xl sm:text-4xl font-black text-slate-900 tracking-tight group-hover:text-cyan-600 transition-colors" data-counter-target="100" data-counter-suffix="+">100+</div>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-800 uppercase tracking-wide">High-Value Jobs</p>
+            <p class="text-[11px] text-slate-500 mt-0.5 font-medium leading-tight">Direct Regional Impact</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Directing Innovation in Andhra Pradesh / Institutional Foundation -->
+  <section class="py-20 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-5">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-100 text-brand-orange text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+            <span>Institutional Foundation</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight leading-tight">
+            Directing Technology Innovation from Vadlamudi, Guntur
+          </h2>
+          <p class="text-gray-600 text-base leading-relaxed">
+            VFSTR TBI Council is a Section 8 non-profit company (CIN: U73100AP2022NPL121922) operating from the 2nd Floor of Nagarjuna Bhavan at Vignan’s Foundation for Science, Technology and Research (Deemed to be University).
+          </p>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Surrounded by <strong>4 Centres of Excellence</strong> and <strong>15 advanced research laboratories</strong>, Vignan TBI links regional industrial challenges in chilli, spices, biotech, and renewable power with top researchers and entrepreneurial grit. In 2023, the Department of Science & Technology (DST) sanctioned <strong>₹4.50 Crore</strong> to accelerate this ecosystem as a full-fledged NIDHI inclusive TBI.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3">
+            <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200">
+              <h4 class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i>
+                <span>Inclusive Mandate</span>
+              </h4>
+              <p class="text-xs text-gray-500 mt-1">Open to campus students, faculty innovators, alumni, and grassroots founders across Andhra Pradesh.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200">
+              <h4 class="text-sm font-bold text-gray-900 flex items-center gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange"></i>
+                <span>Direct DST NIDHI Grants</span>
+              </h4>
+              <p class="text-xs text-gray-500 mt-1">Access to NIDHI PRAYAS prototyping grants and NIDHI EIR monthly entrepreneur stipends.</p>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="about.html" class="inline-flex items-center gap-2 text-sm font-bold text-brand-orange hover:text-brand-accent transition">
+              <span>Read our leadership, governance, and university story</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-200 aspect-[16/10]">
+            <img src="assets/website_optimized/dsc05706.jpg" alt="Vignan TBI Incubation Hall & Co-working Floor" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 text-white">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-orange">Incubation HQ</span>
+              <h4 class="text-lg font-bold">2nd Floor, Nagarjuna Bhavan, Vadlamudi</h4>
+              <p class="text-xs text-gray-300 mt-1">10,000+ sq.ft of co-working, prototyping, and testing infrastructure.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Thrust Focus Sectors (Cards with badges and details) -->
+  <section class="py-20 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <span class="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-blue-100 text-brand-orange">Thrust Domains</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">Focus Sectors Tailored for Regional & DeepTech Impact</h2>
+        <p class="text-gray-600 text-sm sm:text-base">We prioritize technological ventures solving high-impact problems in four key thematic verticals and deep engineering.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Sector 1: Agritech -->
+        <div class="group bg-white rounded-3xl p-7 border border-gray-200 hover:border-brand-orange transition-all duration-300 shadow-sm hover:shadow-xl relative flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-brand-orange font-black text-base mb-5 group-hover:scale-110 transition">
+              01
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-orange transition">Agriculture & Food Processing</h3>
+            <p class="text-xs text-gray-500 mt-2.5 leading-relaxed">
+              Situated in the heart of Guntur’s chilli, turmeric, and spice corridor. Developing smart sorters, post-harvest dehydrators, bio-pesticides, and farm IoT.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between text-xs font-bold text-gray-500 group-hover:text-brand-orange transition">
+            <span>Food Testing CoE</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Sector 2: Biotechnology -->
+        <div class="group bg-white rounded-3xl p-7 border border-gray-200 hover:border-brand-orange transition-all duration-300 shadow-sm hover:shadow-xl relative flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 font-black text-base mb-5 group-hover:scale-110 transition">
+              02
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-orange transition">Biotechnology & Healthcare</h3>
+            <p class="text-xs text-gray-500 mt-2.5 leading-relaxed">
+              Translational molecular biology, diagnostic test kits, indigenous PCR reagents, and health-tech devices. Birthplace of Shubhakruth Medical Genetics (SMGPL).
+            </p>
+          </div>
+          <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between text-xs font-bold text-gray-500 group-hover:text-brand-orange transition">
+            <span>Biotech Cleanroom</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Sector 3: Renewable Energy -->
+        <div class="group bg-white rounded-3xl p-7 border border-gray-200 hover:border-brand-orange transition-all duration-300 shadow-sm hover:shadow-xl relative flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 font-black text-base mb-5 group-hover:scale-110 transition">
+              03
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-orange transition">Renewable & Clean Energy</h3>
+            <p class="text-xs text-gray-500 mt-2.5 leading-relaxed">
+              Decentralized solar-biomass hybrid systems, micro-grid controllers, energy storage prototypes, and rural solar cold chains.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between text-xs font-bold text-gray-500 group-hover:text-brand-orange transition">
+            <span>Renewable Energy CoE</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Sector 4: Waste Valorization -->
+        <div class="group bg-white rounded-3xl p-7 border border-gray-200 hover:border-brand-orange transition-all duration-300 shadow-sm hover:shadow-xl relative flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-brand-orange font-black text-base mb-5 group-hover:scale-110 transition">
+              04
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-orange transition">Waste Valorization & Circular Tech</h3>
+            <p class="text-xs text-gray-500 mt-2.5 leading-relaxed">
+              Transforming agricultural crop residues into bio-char, eco-composites, industrial wastewater reclamation, and sustainable packaging.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-gray-100 mt-6 flex items-center justify-between text-xs font-bold text-gray-500 group-hover:text-brand-orange transition">
+            <span>Chemical Testing Lab</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="programs.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-gray-300 text-gray-800 text-xs sm:text-sm font-bold shadow-sm hover:border-brand-orange transition">
+          <span>View Detailed Sector Guidelines, Equipment & Lab Facilities</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-brand-orange"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Interactive Incubation Journey & Workflow Tracker (id="journey") -->
+  <section id="journey" class="py-20 bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-12 space-y-3">
+        <span class="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-blue-100 text-brand-orange">Structured Progression</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">Interactive Incubation Journey & Milestones</h2>
+        <p class="text-gray-600 text-sm sm:text-base">Click any stage below to inspect the evaluation criteria, laboratory access rights, mentoring cadence, and DST seed funding ceilings.</p>
+      </div>
+
+      <!-- 5 Interactive Stage Selector Cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 mb-8">
+        
+        <div class="specimen-step-card active p-4 rounded-2xl bg-white border border-gray-200 text-left transition">
+          <div class="step-icon-box w-9 h-9 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center font-bold text-xs mb-3 transition">
+            01
+          </div>
+          <span class="text-xs font-bold text-gray-900 block leading-tight">Screening</span>
+          <span class="text-[11px] text-gray-500 mt-0.5 block">Review & Fit</span>
+        </div>
+
+        <div class="specimen-step-card p-4 rounded-2xl bg-white border border-gray-200 text-left transition">
+          <div class="step-icon-box w-9 h-9 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center font-bold text-xs mb-3 transition">
+            02
+          </div>
+          <span class="text-xs font-bold text-gray-900 block leading-tight">IdeaIgnite</span>
+          <span class="text-[11px] text-gray-500 mt-0.5 block">Pre-Incubation</span>
+        </div>
+
+        <div class="specimen-step-card p-4 rounded-2xl bg-white border border-gray-200 text-left transition">
+          <div class="step-icon-box w-9 h-9 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center font-bold text-xs mb-3 transition">
+            03
+          </div>
+          <span class="text-xs font-bold text-gray-900 block leading-tight">Labs & CoEs</span>
+          <span class="text-[11px] text-gray-500 mt-0.5 block">Prototyping</span>
+        </div>
+
+        <div class="specimen-step-card p-4 rounded-2xl bg-white border border-gray-200 text-left transition">
+          <div class="step-icon-box w-9 h-9 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center font-bold text-xs mb-3 transition">
+            04
+          </div>
+          <span class="text-xs font-bold text-gray-900 block leading-tight">Seed Fund</span>
+          <span class="text-[11px] text-gray-500 mt-0.5 block">DST Grants</span>
+        </div>
+
+        <div class="specimen-step-card p-4 rounded-2xl bg-white border border-gray-200 text-left transition">
+          <div class="step-icon-box w-9 h-9 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center font-bold text-xs mb-3 transition">
+            05
+          </div>
+          <span class="text-xs font-bold text-gray-900 block leading-tight">Scale-Up</span>
+          <span class="text-[11px] text-gray-500 mt-0.5 block">Commercialize</span>
+        </div>
+
+      </div>
+
+      <!-- Dynamic Stage Detail Container (Managed by main.js) -->
+      <div id="journeyDetailDisplay" class="min-h-[360px]">
+        <!-- Content injected dynamically -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. Centers of Excellence & Lab Infrastructure Showcase (id="facilities") -->
+  <section id="facilities" class="py-20 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div class="space-y-3 max-w-2xl">
+          <span class="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-blue-100 text-brand-orange border border-blue-200">World-Class Infrastructure</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">The Labs are Right in the Building</h2>
+          <p class="text-slate-600 text-sm sm:text-base">Founders at Vignan TBI work beside 15 research centers and 4 specialized Centres of Excellence at VFSTR Nagarjuna Bhavan.</p>
+        </div>
+        <button data-open-modal="modal-book-tour" class="px-6 py-3 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-lg shadow-blue-500/25 flex items-center gap-2 shrink-0">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Schedule Campus Lab Tour</span>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="rounded-3xl bg-white border border-slate-200/80 p-7 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-brand-orange shadow-2xs">
+              <i data-lucide="dna" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-black text-slate-900">Biotechnology & Molecular CoE</h3>
+            <p class="text-xs text-slate-600 leading-relaxed font-medium">
+              Equipped with Qubit 4 fluorometers, real-time thermal cyclers, laminar biosafety cleanrooms, spectrophotometers, and cold-chain sample accessioning.
+            </p>
+          </div>
+          <div class="pt-5 border-t border-slate-100 mt-6 flex items-center justify-between text-xs text-slate-500 font-semibold">
+            <span>Cleanroom Grade B</span>
+            <span class="text-brand-orange font-bold">VFSTR Dept of Biotech</span>
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-white border border-slate-200/80 p-7 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shadow-2xs">
+              <i data-lucide="sun" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-black text-slate-900">Renewable Energy & Power Systems</h3>
+            <p class="text-xs text-slate-600 leading-relaxed font-medium">
+              Solar simulators, biomass gasification units, micro-grid inverters, battery management testbenches, and hybrid solar-thermal characterization.
+            </p>
+          </div>
+          <div class="pt-5 border-t border-slate-100 mt-6 flex items-center justify-between text-xs text-slate-500 font-semibold">
+            <span>High-Voltage Testing</span>
+            <span class="text-brand-orange font-bold">Centre of Excellence</span>
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-white border border-slate-200/80 p-7 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyan-600 shadow-2xs">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-xl font-black text-slate-900">Embedded IoT & Agri-Sensor Prototyping</h3>
+            <p class="text-xs text-slate-600 leading-relaxed font-medium">
+              High-precision 3D printers, PCB milling stations, digital storage oscilloscopes, sensor calibration chambers, and drone testing payload bays.
+            </p>
+          </div>
+          <div class="pt-5 border-t border-slate-100 mt-6 flex items-center justify-between text-xs text-slate-500 font-semibold">
+            <span>Hardware Fab Lab</span>
+            <span class="text-brand-orange font-bold">Maker Space</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. Sinewave Milestone Timeline / Journey of Vignan TBI -->
+  <section class="journey-section-wrapper py-24 border-t border-gray-200 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="journey-script-tag block">A Legacy of Innovation</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">The Journey of Vignan TBI</h2>
+        <p class="text-gray-600 text-sm sm:text-base">From a university entrepreneurship cell to an authorized DST NIDHI inclusive incubator supporting regional founders.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="journey-card">
+          <div class="text-2xl font-black text-brand-orange mb-2">2012</div>
+          <h4 class="text-base font-bold text-gray-900">E-Cell Inception</h4>
+          <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+            Entrepreneurship awareness cell founded at VFSTR campus, conducting hackathons and seed ideation camps for engineering and science scholars.
+          </p>
+          <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-semibold text-gray-400">Campus Foundation</div>
+        </div>
+
+        <div class="journey-card">
+          <div class="text-2xl font-black text-brand-orange mb-2">2017</div>
+          <h4 class="text-base font-bold text-gray-900">Incubator Establishment</h4>
+          <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+            Vignan Technology Business Incubator established to open campus laboratories to external founders and alumni in Agritech, Biotech, and Clean Energy.
+          </p>
+          <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-semibold text-gray-400">Regional Footprint</div>
+        </div>
+
+        <div class="journey-card">
+          <div class="text-2xl font-black text-brand-orange mb-2">2022</div>
+          <h4 class="text-base font-bold text-gray-900">Section 8 Incorporation</h4>
+          <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+            Incorporated as VFSTR TBI Council on June 09, 2022 (CIN: U73100AP2022NPL121922) to govern autonomous seed funding and equity incubation.
+          </p>
+          <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-semibold text-gray-400">Corporate Governance</div>
+        </div>
+
+        <div class="journey-card border-brand-orange shadow-md">
+          <div class="text-2xl font-black text-brand-orange mb-2">2023–26</div>
+          <h4 class="text-base font-bold text-gray-900">DST NIDHI ₹4.5 Cr Grant</h4>
+          <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+            DST sanctions ₹4.50 Crore grant. 40+ startups incubated, ₹60L+ seed capital deployed, and scaling ventures like Shubhakruth Medical Genetics pan-India.
+          </p>
+          <div class="mt-4 pt-3 border-t border-gray-100 text-[11px] font-bold text-brand-orange">National Scale-Up</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. Success Stories & Incubatee Showcase -->
+  <section class="py-20 bg-brand-light border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div class="space-y-3 max-w-2xl">
+          <span class="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-emerald-100 text-emerald-700">Incubatee Showcase</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">Pioneering Ventures Built at Vignan TBI</h2>
+          <p class="text-gray-600 text-sm sm:text-base">Real stories of founders who turned lab research and regional challenges into sustainable commercial companies.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Story 1: SMGPL -->
+        <div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 bg-blue-100 text-brand-orange font-bold text-xs rounded-full">Health-Tech / Genomics</span>
+              <span class="text-xs font-semibold text-gray-400">Incubated 2022</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Shubhakruth Medical Genetics (SMGPL)</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              "Accelerated by VFSTR TBI Council for health-tech innovation and translational biology. We transformed advanced Whole Exome Sequencing and indigenous molecular diagnostic kits into a trusted healthcare enterprise with 500+ hospital partners."
+            </p>
+          </div>
+          <div class="pt-6 border-t border-gray-100 mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 text-brand-orange font-bold text-xs flex items-center justify-center">SM</div>
+            <div>
+              <p class="text-xs font-bold text-gray-900">Dr. Naga Simhadri Allu</p>
+              <p class="text-[11px] text-gray-500">Director, Shubhakruth Medical Genetics</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 2: AgroTech Sorter -->
+        <div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 bg-amber-100 text-amber-700 font-bold text-xs rounded-full">Agritech AI</span>
+              <span class="text-xs font-semibold text-gray-400">Cohort 2024</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Smart Chilli Crop Sorter</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              "Developing hardware in Guntur was impossible without the sensor prototyping benches at Nagarjuna Bhavan. With ₹10L PRAYAS support, our high-speed moisture grading unit is already deployed with 12 local FPOs."
+            </p>
+          </div>
+          <div class="pt-6 border-t border-gray-100 mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 font-bold text-xs flex items-center justify-center">KR</div>
+            <div>
+              <p class="text-xs font-bold text-gray-900">K. Ramesh</p>
+              <p class="text-[11px] text-gray-500">Founder, AgriSens Innovations</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 3: Bio-Energy -->
+        <div class="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 bg-blue-100 text-blue-700 font-bold text-xs rounded-full">CleanTech</span>
+              <span class="text-xs font-semibold text-gray-400">Cohort 2023</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Solar-Biomass Hybrid Cold Room</h3>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              "Access to the Centre of Excellence in Renewable Energy allowed us to simulate continuous 4°C storage for perishables without relying on grid power. The mentor panel helped us secure our first institutional pilot."
+            </p>
+          </div>
+          <div class="pt-6 border-t border-gray-100 mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center">PV</div>
+            <div>
+              <p class="text-xs font-bold text-gray-900">P. Venkat</p>
+              <p class="text-[11px] text-gray-500">Founder, Solarix Bio-Storage</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. Grant & Seed Support Eligibility Calculator -->
+  <section class="py-20 bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-5 space-y-4">
+          <span class="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-blue-100 text-brand-orange">Interactive Estimator</span>
+          <h2 class="text-3xl font-black text-gray-900 tracking-tight">Grant & Seed Support Eligibility Calculator</h2>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Select your startup's development stage and technological domain to calculate recommended DST NIDHI funding schemes, grant ceilings, and lab allocation packages.
+          </p>
+          <div class="pt-2 text-xs text-gray-500 space-y-2">
+            <div class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+              <span>No dilution required for PRAYAS and EIR prototyping grants</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+              <span>Subsidized electricity, cleanroom access & testing equipment</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-gray-50 rounded-3xl p-8 border border-gray-200 shadow-sm">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Venture Development Stage</label>
+              <select id="calcStage" class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-xs font-semibold text-gray-800 focus:outline-none focus:border-brand-orange">
+                <option value="idea">Early Ideation / Problem Validation</option>
+                <option value="prototype" selected>Proof-of-Concept / Functional Prototype</option>
+                <option value="mvp">Minimum Viable Product (MVP) / Alpha Pilot</option>
+                <option value="scale">Commercializing / Scaling Early Sales</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">Thematic Domain</label>
+              <select id="calcSector" class="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-xs font-semibold text-gray-800 focus:outline-none focus:border-brand-orange">
+                <option value="agri" selected>Agritech & Crop Value Chain</option>
+                <option value="bio">Biotechnology & Healthcare Devices</option>
+                <option value="energy">Renewable & Clean Energy Systems</option>
+                <option value="waste">Waste Management & Circular Tech</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Output Results Box -->
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm text-slate-900 space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-gray-800">
+              <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Recommended Grant Scheme</span>
+              <span id="calcOutputScheme" class="text-xs font-bold text-brand-orange">DST NIDHI PRAYAS Prototyping Support</span>
+            </div>
+            <div class="flex items-center justify-between pb-3 border-b border-gray-800">
+              <span class="text-xs text-gray-400 font-semibold uppercase tracking-wider">Estimated Grant / Seed Support</span>
+              <span id="calcOutputGrant" class="text-xl font-black text-white">₹5,00,000 - ₹10,00,000</span>
+            </div>
+            <div>
+              <span class="text-[11px] text-gray-400 uppercase tracking-wider block mb-1">Lab Workstation & Infrastructure Package</span>
+              <p id="calcOutputLab" class="text-xs text-gray-300 font-medium">Specialized Lab (Nagarjuna Bhavan) · Soil & Food Quality Testing Suite</p>
+            </div>
+            <div class="pt-2">
+              <button data-open-modal="modal-apply-incubation" class="w-full py-3 bg-brand-orange hover:bg-brand-accent text-white text-xs font-bold rounded-xl transition flex items-center justify-center gap-2">
+                <span>Apply for this Grant Package</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 11. Interactive FAQs Accordion with Category Filter & Search -->
+  <section class="faq-section-wrapper py-24 border-t border-blue-100 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <span class="px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-blue-100 text-brand-orange">Everything You Need to Know</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">Frequently Asked Questions</h2>
+        <p class="text-gray-600 text-sm">Clear, transparent answers about eligibility, seed funding, lab access, and IP protection.</p>
+      </div>
+
+      <!-- Live Search Box -->
+      <div class="faq-search-box max-w-xl mx-auto mb-8 flex items-center px-5 py-3.5 gap-3">
+        <i data-lucide="search" class="w-4 h-4 text-brand-orange shrink-0"></i>
+        <input id="faqSearchInput" type="text" placeholder="Search questions (e.g. funding, eligibility, lab access, IP)..." class="w-full text-xs sm:text-sm font-medium text-gray-800 placeholder-gray-400 focus:outline-none bg-transparent">
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center justify-center gap-2 sm:gap-3 flex-wrap mb-10">
+        <button class="faq-cat-btn active" data-cat="all">All Topics</button>
+        <button class="faq-cat-btn" data-cat="eligibility">Eligibility</button>
+        <button class="faq-cat-btn" data-cat="funding">Seed Funding</button>
+        <button class="faq-cat-btn" data-cat="labs">Lab Access</button>
+        <button class="faq-cat-btn" data-cat="ip">IP & Mentorship</button>
+      </div>
+
+      <!-- FAQ Items List -->
+      <div class="space-y-4">
+        
+        <div class="faq-card open" data-cat="eligibility">
+          <div class="faq-card-header">
+            <span class="text-sm sm:text-base font-bold text-gray-900">Who is eligible to apply for incubation at Vignan TBI?</span>
+            <i data-lucide="chevron-down" class="faq-chevron-icon w-5 h-5 text-gray-400 shrink-0 transition-transform"></i>
+          </div>
+          <div class="faq-card-content px-6 pb-6 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+            Incubation is open to students, researchers, faculty innovators, alumni of VFSTR, as well as external grassroots entrepreneurs and startups across Andhra Pradesh and pan-India. If your venture works in Agritech, Biotechnology, Clean Energy, Waste Management, or DeepTech, you can apply directly.
+          </div>
+        </div>
+
+        <div class="faq-card" data-cat="funding">
+          <div class="faq-card-header">
+            <span class="text-sm sm:text-base font-bold text-gray-900">What funding support is available through DST NIDHI?</span>
+            <i data-lucide="chevron-down" class="faq-chevron-icon w-5 h-5 text-gray-400 shrink-0 transition-transform"></i>
+          </div>
+          <div class="faq-card-content px-6 pb-6 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+            Through the ₹4.50 Crore DST NIDHI inclusive TBI grant, Vignan TBI deploys several mechanisms: NIDHI PRAYAS prototyping grants (up to ₹10 Lakhs non-dilutive), NIDHI EIR monthly entrepreneur stipends (up to ₹30,000/month for 12 months), and Seed Support System (SSS) tranches up to ₹50 Lakhs for growth-stage entities. Over ₹60 Lakhs in seed has already been deployed.
+          </div>
+        </div>
+
+        <div class="faq-card" data-cat="labs">
+          <div class="faq-card-header">
+            <span class="text-sm sm:text-base font-bold text-gray-900">Can our team access university research laboratories and test equipment?</span>
+            <i data-lucide="chevron-down" class="faq-chevron-icon w-5 h-5 text-gray-400 shrink-0 transition-transform"></i>
+          </div>
+          <div class="faq-card-content px-6 pb-6 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+            Yes. Incubated companies receive designated access badges to the 4 Centres of Excellence and 15 research centers housed at Nagarjuna Bhavan. This includes biotechnology cleanrooms, spectrophotometry, real-time PCR, solar simulators, high-speed hardware 3D printers, and chemical characterization benches.
+          </div>
+        </div>
+
+        <div class="faq-card" data-cat="ip">
+          <div class="faq-card-header">
+            <span class="text-sm sm:text-base font-bold text-gray-900">Does Vignan TBI claim ownership over our startup’s intellectual property (IP)?</span>
+            <i data-lucide="chevron-down" class="faq-chevron-icon w-5 h-5 text-gray-400 shrink-0 transition-transform"></i>
+          </div>
+          <div class="faq-card-content px-6 pb-6 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+            No. The intellectual property generated by the founders remains 100% with the founder and their registered company. Vignan TBI provides institutional IP attorneys to assist with patent search, drafting, and fast-track filing, without claiming IP ownership.
+          </div>
+        </div>
+
+        <div class="faq-card" data-cat="eligibility">
+          <div class="faq-card-header">
+            <span class="text-sm sm:text-base font-bold text-gray-900">How long does the application review and screening process take?</span>
+            <i data-lucide="chevron-down" class="faq-chevron-icon w-5 h-5 text-gray-400 shrink-0 transition-transform"></i>
+          </div>
+          <div class="faq-card-content px-6 pb-6 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+            Initial review of submitted applications takes 7 to 10 working days. Shortlisted founders are invited for an IdeaIgnite pitch session before our screening panel. Once cleared, pre-incubation or full incubation onboarding occurs immediately.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 12. Strategic Institutional & Ecosystem Partners (High-Visibility Infinite Marquee) -->
+  <section class="py-16 bg-white border-t border-gray-200 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">Ecosystem Network</span>
+        <h3 class="text-xl sm:text-2xl font-black text-gray-900 mt-1">Our Government & Industry Partners</h3>
+        <p class="text-xs text-gray-500 mt-1">Accelerating innovation through state, national, and industry alliances.</p>
+      </div>
+
+    </div>
+
+    <!-- Infinite Scrolling Marquee Container -->
+    <div class="relative w-full overflow-hidden py-2">
+      <!-- Ambient Edge Fades for Smooth Seamless Blend -->
+      <div class="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-36 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-36 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
+
+      <!-- Marquee Track (Double Set for 100% Seamless Infinite Loop) -->
+      <div class="partner-marquee-track">
+        
+        <!-- === SET 1 === -->
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="DST - Department of Science and Technology, Govt. of India">
+          <img src="assets/logos/DST.png" alt="DST Govt of India" class="h-11 sm:h-12 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="DST NIDHI - National Initiative for Developing and Harnessing Innovations">
+          <img src="assets/logos/DST NIDHI_Greyscale-H.png" alt="DST NIDHI" class="h-10 sm:h-11 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="APSSDC - Andhra Pradesh State Skill Development Corporation">
+          <img src="assets/logos/apssdc.png" alt="APSSDC" class="h-11 sm:h-12 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="T-Hub - Premier Innovation Hub">
+          <img src="assets/logos/thub.png" alt="T-Hub" class="h-9 sm:h-10 w-auto max-w-[140px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="Nexus - US Embassy & American Center Startup Hub">
+          <img src="assets/logos/nexus.png" alt="Nexus" class="h-9 sm:h-10 w-auto max-w-[140px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="Andhra Pradesh Innovation Society (APIS)">
+          <img src="assets/logos/apInso.png" alt="AP Innovation Society" class="h-11 sm:h-12 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="Wadhwani Foundation - Entrepreneurship Development">
+          <img src="assets/logos/wadhwani.png" alt="Wadhwani Foundation" class="h-10 sm:h-11 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="Efftronics Systems Pvt Ltd - Industrial IoT Leader">
+          <img src="assets/logos/efftronics.png" alt="Efftronics" class="h-10 sm:h-11 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="30M Genomics / Gromics - Deep Biotech Partner">
+          <img src="assets/logos/gromics.png" alt="30M Genomics" class="h-10 sm:h-11 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="Avarshala Technologies">
+          <img src="assets/logos/avarshala.jpg" alt="Avarshala" class="h-10 sm:h-11 w-auto max-w-[140px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <!-- === SET 2 (SEAMLESS INFINITE LOOP CLONE) === -->
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="DST - Department of Science and Technology, Govt. of India">
+          <img src="assets/logos/DST.png" alt="DST Govt of India" class="h-11 sm:h-12 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="DST NIDHI - National Initiative for Developing and Harnessing Innovations">
+          <img src="assets/logos/DST NIDHI_Greyscale-H.png" alt="DST NIDHI" class="h-10 sm:h-11 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="APSSDC - Andhra Pradesh State Skill Development Corporation">
+          <img src="assets/logos/apssdc.png" alt="APSSDC" class="h-11 sm:h-12 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="T-Hub - Premier Innovation Hub">
+          <img src="assets/logos/thub.png" alt="T-Hub" class="h-9 sm:h-10 w-auto max-w-[140px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="Nexus - US Embassy & American Center Startup Hub">
+          <img src="assets/logos/nexus.png" alt="Nexus" class="h-9 sm:h-10 w-auto max-w-[140px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="Andhra Pradesh Innovation Society (APIS)">
+          <img src="assets/logos/apInso.png" alt="AP Innovation Society" class="h-11 sm:h-12 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="Wadhwani Foundation - Entrepreneurship Development">
+          <img src="assets/logos/wadhwani.png" alt="Wadhwani Foundation" class="h-10 sm:h-11 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="Efftronics Systems Pvt Ltd - Industrial IoT Leader">
+          <img src="assets/logos/efftronics.png" alt="Efftronics" class="h-10 sm:h-11 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="30M Genomics / Gromics - Deep Biotech Partner">
+          <img src="assets/logos/gromics.png" alt="30M Genomics" class="h-10 sm:h-11 w-auto max-w-[150px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="partner-logo-item group px-7 py-3.5 h-20 rounded-2xl bg-white border border-slate-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:border-brand-orange/60 flex items-center justify-center shrink-0 cursor-pointer" title="Avarshala Technologies">
+          <img src="assets/logos/avarshala.jpg" alt="Avarshala" class="h-10 sm:h-11 w-auto max-w-[140px] object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Regional Hub & Campus Location Banner -->
+  <section class="py-16 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-xl text-slate-900 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-brand-orange/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-8 space-y-3">
+            <span class="text-xs font-bold text-brand-orange uppercase tracking-wider">The Crop & Tech Corridor</span>
+            <h3 class="text-2xl sm:text-3xl font-black">Bring Your Idea. We Will Tell You If It Fits.</h3>
+            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-2xl">
+              Located strategically between Guntur, Vijayawada, and Amaravati. Accessible from Gannavaram Airport (45 mins) and Tenali/Guntur Railway Junctions.
+            </p>
+            <p class="text-xs text-brand-orange font-bold">
+              Email: vfstrtbi@vignan.ac.in · Helpline: +91 85008 97550
+            </p>
+          </div>
+          <div class="lg:col-span-4 flex flex-wrap gap-3 lg:justify-end">
+            <button data-open-modal="modal-apply-incubation" class="px-6 py-3.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition shadow-lg">
+              Start Application
+            </button>
+            <a href="contact.html" class="px-6 py-3.5 bg-gray-800 hover:bg-gray-700 text-white font-bold text-xs sm:text-sm rounded-xl transition border border-gray-700">
+              Campus Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Universal Footer (5-Column Layout matching smgpl) -->
+    <!-- Universal Footer (Pristine Light Theme) -->
+    <!-- Universal Footer (Executive Light Theme, No Home Link, Rich Navigation) -->
+  <footer class="bg-slate-50/90 text-slate-700 pt-16 pb-12 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-200 text-xs leading-relaxed">
+        
+        <!-- Col 1: Brand Identity & Legal Details (4 cols) -->
+        <div class="lg:col-span-4 space-y-4">
+          <a href="index.html" class="inline-block transition-transform hover:scale-[1.02]" aria-label="Vignan TBI">
+            <img src="assets/Logo.png" alt="Vignan TBI Logo" class="h-11 sm:h-12 w-auto object-contain">
+          </a>
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200/80 text-brand-orange text-[11px] font-bold">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+            <span>DST Supported · NIDHI i-TBI Council Vadlamudi</span>
+          </div>
+
+          <p class="text-slate-600 text-xs leading-relaxed pr-4">
+            <strong class="text-slate-900 font-bold">VFSTR TBI Council</strong> (CIN: U73100AP2022NPL121922). Incorporated on June 09, 2022 as a Section 8 non-profit company supported by Department of Science & Technology (DST), Govt. of India to accelerate deep-tech innovation in Agritech, Biotech, Renewable Energy, and Waste Valorization.
+          </p>
+
+          <div class="space-y-1.5 pt-2 text-slate-600">
+            <p class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"></i>
+              <span>2nd Floor, Nagarjuna Bhavan, VFSTR (Deemed to be University), Vadlamudi, Guntur, AP – 522213</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-orange shrink-0"></i>
+              <a href="mailto:vfstrtbi@vignan.ac.in" class="hover:text-brand-orange transition">vfstrtbi@vignan.ac.in</a>
+            </p>
+            <p class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-brand-orange shrink-0"></i>
+              <span>+91 85008 97550 / +91 863 2344700</span>
+            </p>
+          </div>
+
+                    <!-- Official Real Social Logos (Inline SVG, Crisp & Reliable) -->
+          <div class="flex items-center gap-2 pt-2">
+            <a href="https://www.linkedin.com/company/vignantbi" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white hover:bg-[#0A66C2] text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-xs group" aria-label="LinkedIn" title="Vignan TBI on LinkedIn">
+              <svg class="w-4 h-4 fill-current transition-colors" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.72a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+            </a>
+            <a href="https://twitter.com/vignantbi" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white hover:bg-black text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-xs group" aria-label="X (Twitter)" title="Vignan TBI on X">
+              <svg class="w-3.5 h-3.5 fill-current transition-colors" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="mailto:vfstrtbi@vignan.ac.in" class="w-8 h-8 rounded-lg bg-white hover:bg-[#EA4335] text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-xs group" aria-label="Email" title="Send Official Email">
+              <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </a>
+            <a href="https://wa.me/918500897550" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white hover:bg-[#25D366] text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-xs group" aria-label="WhatsApp" title="WhatsApp Incubation Desk">
+              <svg class="w-4 h-4 fill-current transition-colors" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.42 1.01 2.59c.13.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.18-.47-.31z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation (No Home) (2 cols) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider text-brand-orange">Navigation</h4>
+          <ul class="space-y-2 text-slate-600 font-medium">
+            <li><a href="about.html" class="hover:text-brand-orange transition">About Us</a></li>
+            <li><a href="process.html" class="hover:text-brand-orange transition font-semibold text-slate-900">Incubation Process</a></li>
+            <li><a href="about.html#team" class="hover:text-brand-orange transition">Leadership & Team</a></li>
+            <li><a href="programs.html" class="hover:text-brand-orange transition">Focus Sectors</a></li>
+            <li><a href="facilities.html" class="hover:text-brand-orange transition">Lab Facilities</a></li>
+            <li><a href="startups.html" class="hover:text-brand-orange transition">Portfolio Startups</a></li>
+            <li><a href="events.html" class="hover:text-brand-orange transition">Events & Spark</a></li>
+            <li><a href="apply.html" class="hover:text-brand-orange transition">Apply for Incubation</a></li>
+            <li><a href="contact.html" class="hover:text-brand-orange transition">Contact & Tour</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Focus Domains (2 cols) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider text-brand-orange">Focus Sectors</h4>
+          <ul class="space-y-2 text-slate-600">
+            <li><a href="programs.html#agri" class="hover:text-brand-orange transition">Agritech & Food Tech</a></li>
+            <li><a href="programs.html#bio" class="hover:text-brand-orange transition">Biotech & Genomics</a></li>
+            <li><a href="programs.html#energy" class="hover:text-brand-orange transition">Renewable Energy</a></li>
+            <li><a href="programs.html#waste" class="hover:text-brand-orange transition">Waste Valorization</a></li>
+            <li><a href="programs.html#deeptech" class="hover:text-brand-orange transition">DeepTech & IoT</a></li>
+            <li><a href="facilities.html" class="hover:text-brand-orange transition">Central Instrumentation</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Grants & Funding (2 cols) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider text-brand-orange">Grants & Funding</h4>
+          <ul class="space-y-2 text-slate-600">
+            <li><a href="process.html#grants" class="hover:text-brand-orange transition">NIDHI-PRAYAS (₹10L)</a></li>
+            <li><a href="process.html#grants" class="hover:text-brand-orange transition">NIDHI-EIR (₹30K/mo)</a></li>
+            <li><a href="process.html#grants" class="hover:text-brand-orange transition">DST Seed Support (₹25L)</a></li>
+            <li><a href="process.html#grants" class="hover:text-brand-orange transition">Patent Filing Subsidy</a></li>
+            <li><button data-open-modal="modal-apply-incubation" class="text-left hover:text-brand-orange transition font-semibold text-brand-orange">Fast-Track Pitch</button></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Governance & Affiliations (2 cols) -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider text-brand-orange">Governance</h4>
+          <ul class="space-y-2 text-slate-600">
+            <li><a href="about.html#team" class="hover:text-brand-orange transition">Executive Committee</a></li>
+            <li><a href="about.html#bod" class="hover:text-brand-orange transition">Board of Directors</a></li>
+            <li><a href="https://vignan.ac.in" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition">VFSTR Deemed University</a></li>
+            <li><a href="https://dst.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition">DST Govt. of India</a></li>
+            <li><a href="https://nidhi.dst.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition">DST NIDHI Portal</a></li>
+            <li><button data-open-modal="modal-book-tour" class="text-left hover:text-brand-orange transition">Schedule Lab Visit</button></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© 2026 VFSTR TBI Council. All rights reserved. Supported by DST, Ministry of Science & Technology, Govt. of India.</p>
+        <div class="flex items-center gap-4 text-slate-400">
+          <span>Section 8 Non-Profit</span>
+          <span>•</span>
+          <span>CIN: U73100AP2022NPL121922</span>
+          <span>•</span>
+          <span>Vadlamudi, Guntur</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 15. Universal Modals -->
+
+  <!-- Modal A: Apply for Incubation -->
+  <div id="modal-apply-incubation" class="modal-overlay">
+    <div class="modal-card bg-white rounded-3xl max-w-xl w-full p-8 shadow-2xl border border-gray-200 relative">
+      <button data-close-modal class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 p-1">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="mb-6 space-y-1">
+        <span class="px-3 py-0.5 text-xs font-bold uppercase tracking-wider rounded-full bg-blue-100 text-brand-orange">Fast-Track Application</span>
+        <h3 class="text-2xl font-black text-gray-900">Apply for Incubation at Vignan TBI</h3>
+        <p class="text-xs text-gray-500">Submit your venture details. Our technical desk will review and connect directly via WhatsApp & Email.</p>
+      </div>
+
+      <form id="incubationApplicationForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Lead Founder Name *</label>
+          <input type="text" name="founder_name" required placeholder="e.g. Ramesh Kumar" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-brand-orange">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Email Address *</label>
+            <input type="email" name="email" required placeholder="founder@venture.com" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-brand-orange">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">WhatsApp Mobile *</label>
+            <input type="tel" name="phone" required placeholder="+91 98765 43210" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-brand-orange">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Startup / Project Name *</label>
+            <input type="text" name="startup_name" required placeholder="e.g. AgriSens Solutions" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-brand-orange">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Thematic Vertical *</label>
+            <select name="sector" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-brand-orange">
+              <option value="Agritech">Agritech & Food Processing</option>
+              <option value="Biotech">Biotechnology & Diagnostics</option>
+              <option value="Renewable Energy">Renewable Energy & CleanTech</option>
+              <option value="Waste Valorization">Waste Valorization & Materials</option>
+              <option value="DeepTech & IoT">DeepTech & Hardware IoT</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Brief Problem & Solution Summary *</label>
+          <textarea name="summary" rows="3" required placeholder="Describe what problem you are solving, what prototype or validation you have built, and what lab support you require..." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-brand-orange"></textarea>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3.5 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition duration-200 shadow-xl shadow-blue-500/25 flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Submit Application & Connect on WhatsApp</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal B: Book Campus & Lab Tour -->
+  <div id="modal-book-tour" class="modal-overlay">
+    <div class="modal-card bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-gray-200 relative">
+      <button data-close-modal class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 p-1">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="mb-6 space-y-1">
+        <span class="px-3 py-0.5 text-xs font-bold uppercase tracking-wider rounded-full bg-blue-100 text-brand-orange">Visit Nagarjuna Bhavan</span>
+        <h3 class="text-2xl font-black text-gray-900">Book Campus & Lab Tour</h3>
+        <p class="text-xs text-gray-500">Tour our Biotechnology CoE, IoT Labs, and Maker Space in Vadlamudi.</p>
+      </div>
+
+      <form id="bookTourForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Your Full Name *</label>
+          <input type="text" required placeholder="Dr. / Mr. / Ms." class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-brand-orange">
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Phone Number *</label>
+            <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-brand-orange">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Preferred Date *</label>
+            <input type="date" required class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-brand-orange">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">Specific Labs to Inspect</label>
+          <select class="w-full bg-gray-50 border border-gray-300 rounded-xl px-3.5 py-2.5 text-xs text-gray-900 focus:outline-none focus:border-brand-orange">
+            <option>All 4 CoEs & Nagarjuna Bhavan Co-Working</option>
+            <option>Biotechnology & Molecular Diagnostics CoE</option>
+            <option>Renewable Energy & Power Systems Lab</option>
+            <option>Embedded IoT & Hardware Maker Space</option>
+          </select>
+        </div>
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3 bg-brand-orange hover:bg-brand-accent text-white font-bold text-xs sm:text-sm rounded-xl transition flex items-center justify-center gap-2">
+            <span>Confirm Visit Request</span>
+            <i data-lucide="check" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 16. Floating Action Dock & Scroll Progress Ring -->
+  <button id="scrollProgressBtn" class="progress-scroll-btn" aria-label="Scroll to Top">
+    <svg class="progress-ring">
+      <circle class="progress-ring-circle" stroke-width="3" fill="transparent" r="22" cx="24" cy="24" />
+    </svg>
+    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+  </button>
+
+  <!-- Speed-Dial Floating Contact Menu -->
+  <div id="speedDialContainer" class="speed-dial-container">
+    <div class="speed-dial-items">
+      <a href="https://wa.me/918500897550?text=Hello%20Vignan%20TBI,%20I%20would%20like%20to%20know%20about%20incubation%20opportunities" target="_blank" rel="noopener noreferrer" class="speed-dial-item-btn text-emerald-600 hover:text-emerald-700">
+        <i data-lucide="message-circle" class="w-4 h-4 text-emerald-500"></i>
+        <span>Chat on WhatsApp</span>
+      </a>
+      <a href="tel:+918500897550" class="speed-dial-item-btn">
+        <i data-lucide="phone" class="w-4 h-4 text-brand-orange"></i>
+        <span>Call Incubation Desk</span>
+      </a>
+      <button data-open-modal="modal-apply-incubation" class="speed-dial-item-btn">
+        <i data-lucide="file-text" class="w-4 h-4 text-brand-orange"></i>
+        <span>Quick Apply</span>
+      </button>
+    </div>
+    <button id="speedDialTrigger" class="speed-dial-trigger" aria-label="Open Quick Support Menu">
+      <i data-lucide="message-square" class="w-6 h-6"></i>
+    </button>
+  </div>
+
+  <!-- Main JavaScript Engine -->
+  <script src="js/main.js"></script>
+</body>
+</html>

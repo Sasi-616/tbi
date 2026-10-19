@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Team Member Profile | Vignan TBI</title>
+  <meta name="description" id="pageDesc" content="Leadership & Team profile at Vignan TBI (DST Supported Technology Business Incubator).">
+  
+  <link rel="icon" type="image/png" href="assets/Favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FF6F00',
+              accent: '#E65100',
+              blue: '#0052CC',
+              dark: '#1e293b'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased font-sans flex flex-col min-h-screen selection:bg-brand-orange selection:text-white">
+
+  <!-- Main Sticky Floating Capsule Navigation Header -->
+    <!-- Floating Capsule Container Navbar (Container Only, No Text Icons, No Background Overflow) -->
+  <header class="site-header sticky top-3 sm:top-4 z-50 px-3 sm:px-6 lg:px-8 transition-all duration-300">
+    <div class="max-w-7xl mx-auto nav-container-pill px-4 sm:px-5 lg:px-6 py-2 sm:py-2.5 transition-all">
+      <div class="flex items-center justify-between gap-4">
+        
+        <!-- Left: Official Logos with Vertical Divider -->
+        <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+          <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none" aria-label="Vignan TBI">
+            <img src="assets/Logo.png" alt="Vignan TBI Logo" class="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105">
+            <div class="h-7 w-px bg-slate-200 hidden sm:block"></div>
+            <img src="assets/logos/DST.png" alt="DST Govt. of India" class="h-7 sm:h-8 w-auto object-contain hidden sm:block">
+          </a>
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="h-6 w-px bg-slate-200 hidden xl:block shrink-0"></div>
+
+        <!-- Center: Clean Text-Only Desktop Navigation Links (No Icons, No Home) -->
+        <nav class="hidden xl:flex items-center space-x-1 2xl:space-x-2 text-[13.5px] font-semibold tracking-tight">
+          <a href="about.html" class="nav-link active">About Us</a>
+          <a href="programs.html" class="nav-link">Focus Sectors</a>
+          <a href="process.html" class="nav-link">Incubation Process</a>
+          <a href="facilities.html" class="nav-link">Lab Facilities</a>
+          <a href="startups.html" class="nav-link">Startups</a>
+          <a href="events.html" class="nav-link">Events & Spark</a>
+          <a href="apply.html" class="nav-link">Apply</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Right Header Action -->
+        <div class="hidden sm:flex items-center gap-2.5 shrink-0">
+          <button data-open-modal="modal-apply-incubation" class="px-4 py-2 sm:px-4.5 sm:py-2.5 bg-brand-orange hover:bg-brand-accent text-white text-xs sm:text-[13px] font-bold rounded-xl transition shadow-md hover:shadow-orange-500/30 flex items-center gap-1.5">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Apply Now</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileToggle" class="mobile-toggle xl:hidden flex flex-col justify-center items-center w-9 h-9 gap-1.5 focus:outline-none p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 transition" aria-label="Toggle Navigation">
+          <span class="w-5 h-0.5 bg-slate-800 rounded-full"></span>
+          <span class="w-5 h-0.5 bg-slate-800 rounded-full"></span>
+          <span class="w-5 h-0.5 bg-slate-800 rounded-full"></span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="navMenu" class="nav-menu-drawer xl:hidden">
+      <div class="w-full pb-3 border-b border-gray-100 flex items-center justify-between">
+        <a href="index.html" class="inline-block" aria-label="Vignan TBI Home">
+          <img src="assets/Logo.png" alt="Vignan TBI Logo" class="h-10 sm:h-11 w-auto object-contain">
+        </a>
+      </div>
+      <a href="about.html" class="nav-link text-base font-bold py-1 w-full">About Us</a>
+      <a href="about.html#team" class="nav-link text-base font-bold py-1 w-full">Team & Governance</a>
+      <a href="programs.html" class="nav-link text-base font-bold py-1 w-full">Focus Sectors</a>
+      <a href="process.html" class="nav-link text-base font-bold py-1 w-full">Incubation Process</a>
+      <a href="facilities.html" class="nav-link text-base font-bold py-1 w-full">Lab Facilities</a>
+      <a href="startups.html" class="nav-link text-base font-bold py-1 w-full">Startups</a>
+      <a href="events.html" class="nav-link text-base font-bold py-1 w-full">Events & Spark</a>
+      <a href="apply.html" class="nav-link text-base font-bold py-1 w-full">Apply for Incubation</a>
+      <a href="contact.html" class="nav-link text-base font-bold py-1 w-full">Contact & Location</a>
+      <div class="w-full pt-4 mt-auto border-t border-gray-100 space-y-3">
+        <a href="apply.html" class="w-full py-3 bg-brand-orange text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg">
+          <i data-lucide="rocket" class="w-4 h-4"></i>
+          <span>Apply for Incubation</span>
+        </a>
+        <a href="tel:+918500897550" class="w-full py-2.5 bg-gray-100 text-gray-800 text-xs font-bold rounded-xl flex items-center justify-center gap-2">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-orange"></i>
+          <span>+91 85008 97550</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Profile Dynamic Container Frame -->
+  <main class="flex-1 py-10 sm:py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumb Bar -->
+      <nav class="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-8" aria-label="Breadcrumb">
+        <a href="about.html" class="hover:text-brand-orange transition">About Us</a>
+        <span class="text-slate-300">/</span>
+        <a href="about.html#team" class="hover:text-brand-orange transition">Leadership & Team</a>
+        <span class="text-slate-300">/</span>
+        <span id="breadcrumbName" class="text-slate-900 font-bold truncate">Loading Profile...</span>
+      </nav>
+
+      <!-- Member Profile Hero Card Frame -->
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-10 lg:p-12 items-center">
+          
+          <!-- Portrait Photo (Square Aspect Ratio) -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border-4 border-slate-100 shadow-xl bg-slate-100 group">
+              <img id="memberImg" src="" alt="Team Member" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent pointer-events-none"></div>
+              <span id="memberBadge" class="absolute top-3 left-3 px-3 py-1 bg-white/90 backdrop-blur-md text-[11px] font-extrabold uppercase tracking-wider text-brand-orange rounded-full shadow-xs">
+                Leadership
+              </span>
+            </div>
+          </div>
+
+          <!-- Profile Details -->
+          <div class="lg:col-span-7 space-y-4 text-left">
+            <div class="space-y-1">
+              <span id="memberCategory" class="text-xs font-bold uppercase tracking-wider text-brand-orange">Category</span>
+              <h1 id="memberName" class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">Team Member</h1>
+              <p id="memberRole" class="text-base sm:text-lg font-semibold text-slate-600">Designation</p>
+            </div>
+
+            <p id="memberBio" class="text-sm sm:text-base text-slate-600 leading-relaxed pt-2">
+              Loading biography...
+            </p>
+
+            <!-- Action Buttons with Real Official SVGs -->
+            <div class="flex flex-wrap items-center gap-3 pt-4">
+              <a id="memberLinkedin" href="#" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-[#0A66C2] hover:bg-[#004182] text-white text-xs sm:text-sm font-bold rounded-xl transition flex items-center gap-2 shadow-sm">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.72a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+                <span>Connect on LinkedIn</span>
+              </a>
+              <a id="memberEmail" href="#" class="px-5 py-2.5 bg-slate-100 hover:bg-brand-orange hover:text-white text-slate-700 text-xs sm:text-sm font-bold rounded-xl transition flex items-center gap-2 border border-slate-200">
+                <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span>Send Official Email</span>
+              </a>
+              <a href="about.html#team" class="px-4 py-2.5 bg-slate-50 hover:bg-slate-200 text-slate-600 text-xs sm:text-sm font-semibold rounded-xl transition flex items-center gap-1.5">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Back to Team</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Professional Sections Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
+        
+        <!-- Qualifications & Background -->
+        <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
+            <div class="w-9 h-9 rounded-xl bg-orange-50 text-brand-orange flex items-center justify-center font-bold">
+              <i data-lucide="award" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Distinctions & Academic Credentials</h3>
+          </div>
+          <ul id="qualificationsList" class="space-y-2.5 text-xs sm:text-sm text-slate-600">
+            <!-- Dynamically populated from JSON -->
+          </ul>
+        </div>
+
+        <!-- Mentorship & Key Focus Areas -->
+        <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
+            <div class="w-9 h-9 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold">
+              <i data-lucide="compass" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">Mentorship & Focus Domains</h3>
+          </div>
+          <div id="focusAreasList" class="flex flex-wrap gap-2 pt-1">
+            <!-- Dynamically populated from JSON -->
+          </div>
+          <div class="pt-3 border-t border-slate-100 text-xs text-slate-500 leading-relaxed">
+            <strong class="text-slate-800">Key Impact at Vignan TBI:</strong> <span id="memberInitiatives"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Peer Navigation Strip -->
+      <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm text-center">
+        <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Explore More Team Members & Leadership</h4>
+        <div id="peerLinksContainer" class="flex flex-wrap items-center justify-center gap-2">
+          <!-- Dynamically populated from JSON -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Universal Footer with Real SVGs -->
+  <footer class="bg-slate-50/90 text-slate-700 pt-16 pb-12 border-t border-slate-200 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-200 text-xs leading-relaxed">
+        
+        <div class="lg:col-span-4 space-y-4">
+          <a href="index.html" class="inline-block transition-transform hover:scale-[1.02]" aria-label="Vignan TBI">
+            <img src="assets/Logo.png" alt="Vignan TBI Logo" class="h-11 sm:h-12 w-auto object-contain">
+          </a>
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200/80 text-brand-orange text-[11px] font-bold">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+            <span>DST Supported · NIDHI i-TBI Council Vadlamudi</span>
+          </div>
+
+          <p class="text-slate-600 text-xs leading-relaxed pr-4">
+            <strong class="text-slate-900 font-bold">VFSTR TBI Council</strong> (CIN: U73100AP2022NPL121922). Incorporated on June 09, 2022 as a Section 8 non-profit company supported by Department of Science & Technology (DST), Govt. of India to accelerate deep-tech innovation in Agritech, Biotech, Renewable Energy, and Waste Valorization.
+          </p>
+
+          <div class="space-y-1.5 pt-2 text-slate-600">
+            <p class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"></i>
+              <span>2nd Floor, Nagarjuna Bhavan, VFSTR (Deemed to be University), Vadlamudi, Guntur, AP – 522213</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-orange shrink-0"></i>
+              <a href="mailto:vfstrtbi@vignan.ac.in" class="hover:text-brand-orange transition">vfstrtbi@vignan.ac.in</a>
+            </p>
+            <p class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-brand-orange shrink-0"></i>
+              <span>+91 85008 97550 / +91 863 2344700</span>
+            </p>
+          </div>
+
+          <!-- Official Real Social Logos (Inline SVG, Crisp & Reliable) -->
+          <div class="flex items-center gap-2 pt-2">
+            <a href="https://www.linkedin.com/company/vignantbi" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white hover:bg-[#0A66C2] text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-xs group" aria-label="LinkedIn" title="Vignan TBI on LinkedIn">
+              <svg class="w-4 h-4 fill-current transition-colors" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.72a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/></svg>
+            </a>
+            <a href="https://twitter.com/vignantbi" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white hover:bg-black text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-xs group" aria-label="X (Twitter)" title="Vignan TBI on X">
+              <svg class="w-3.5 h-3.5 fill-current transition-colors" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="mailto:vfstrtbi@vignan.ac.in" class="w-8 h-8 rounded-lg bg-white hover:bg-[#EA4335] text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-xs group" aria-label="Email" title="Send Official Email">
+              <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </a>
+            <a href="https://wa.me/918500897550" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white hover:bg-[#25D366] text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-xs group" aria-label="WhatsApp" title="WhatsApp Incubation Desk">
+              <svg class="w-4 h-4 fill-current transition-colors" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.42 1.01 2.59c.13.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.18-.47-.31z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider text-brand-orange">Navigation</h4>
+          <ul class="space-y-2 text-slate-600 font-medium">
+            <li><a href="about.html" class="hover:text-brand-orange transition">About Us</a></li>
+            <li><a href="process.html" class="hover:text-brand-orange transition font-semibold text-slate-900">Incubation Process</a></li>
+            <li><a href="about.html#team" class="hover:text-brand-orange transition">Leadership & Team</a></li>
+            <li><a href="programs.html" class="hover:text-brand-orange transition">Focus Sectors</a></li>
+            <li><a href="facilities.html" class="hover:text-brand-orange transition">Lab Facilities</a></li>
+            <li><a href="startups.html" class="hover:text-brand-orange transition">Portfolio Startups</a></li>
+            <li><a href="events.html" class="hover:text-brand-orange transition">Events & Spark</a></li>
+            <li><a href="apply.html" class="hover:text-brand-orange transition">Apply for Incubation</a></li>
+            <li><a href="contact.html" class="hover:text-brand-orange transition">Contact & Tour</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider text-brand-orange">Focus Sectors</h4>
+          <ul class="space-y-2 text-slate-600">
+            <li><a href="programs.html#agri" class="hover:text-brand-orange transition">Agritech & Food Tech</a></li>
+            <li><a href="programs.html#bio" class="hover:text-brand-orange transition">Biotech & Genomics</a></li>
+            <li><a href="programs.html#energy" class="hover:text-brand-orange transition">Renewable Energy</a></li>
+            <li><a href="programs.html#waste" class="hover:text-brand-orange transition">Waste Valorization</a></li>
+            <li><a href="programs.html#deeptech" class="hover:text-brand-orange transition">DeepTech & IoT</a></li>
+            <li><a href="facilities.html" class="hover:text-brand-orange transition">Central Instrumentation</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider text-brand-orange">Grants & Funding</h4>
+          <ul class="space-y-2 text-slate-600">
+            <li><a href="process.html#grants" class="hover:text-brand-orange transition">NIDHI-PRAYAS (₹10L)</a></li>
+            <li><a href="process.html#grants" class="hover:text-brand-orange transition">NIDHI-EIR (₹30K/mo)</a></li>
+            <li><a href="process.html#grants" class="hover:text-brand-orange transition">DST Seed Support (₹25L)</a></li>
+            <li><a href="process.html#grants" class="hover:text-brand-orange transition">Patent Filing Subsidy</a></li>
+            <li><a href="apply.html" class="hover:text-brand-orange transition font-semibold text-brand-orange">Fast-Track Pitch</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider text-brand-orange">Governance</h4>
+          <ul class="space-y-2 text-slate-600">
+            <li><a href="about.html#team" class="hover:text-brand-orange transition">Executive Committee</a></li>
+            <li><a href="about.html#bod" class="hover:text-brand-orange transition">Board of Directors</a></li>
+            <li><a href="https://vignan.ac.in" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition">VFSTR Deemed University</a></li>
+            <li><a href="https://dst.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition">DST Govt. of India</a></li>
+            <li><a href="https://nidhi.dst.gov.in" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition">DST NIDHI Portal</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© 2026 VFSTR TBI Council. All rights reserved. Supported by DST, Ministry of Science & Technology, Govt. of India.</p>
+        <div class="flex items-center gap-4 text-slate-400">
+          <span>Section 8 Non-Profit</span>
+          <span>•</span>
+          <span>CIN: U73100AP2022NPL121922</span>
+          <span>•</span>
+          <span>Vadlamudi, Guntur</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Embedded Data & Dynamic Frame Renderer Engine -->
+  <script>
+    const teamDataset = {"members": [{"id": "dr-lavu-rathaiah", "name": "Dr. Lavu Rathaiah", "role": "Chairman, Vignan Group of Institutions", "category": "Leadership & Board of Directors", "badge": "Chief Patron & Chairman", "image": "assets/team/square/Dr._Lavu_Rathaiha.jpg", "linkedin": "https://www.linkedin.com/company/vignantbi", "email": "chairman@vignan.ac.in", "bio": "Dr. Lavu Rathaiah is a visionary educational architect, philanthropist, and founder-chairman of the Vignan Group of Institutions. Over four decades, he has established more than 45 educational institutions educating over 50,000 students across South India. A pioneer in student-centered technical pedagogy, he conceptualized the establishment of Vignan TBI under DST's NIDHI scheme to transform university laboratories into vibrant commercial venture engines for grassroots innovators and rural youth.", "qualifications": ["Ph.D. in Education & Engineering Pedagogy", "Founder & Chancellor, VFSTR (Deemed to be University)", "Conferred Multiple National Lifetime Achievement Awards in Higher Education"], "focus_areas": ["Institutional Governance", "Grassroots Entrepreneurship", "Higher Education Policy", "DeepTech R&D Strategy"], "initiatives": "Spearheaded the allocation of 10,000+ sq.ft dedicated incubation space at Nagarjuna Bhavan and created the initial institutional seed endowment fund for student innovators."}, {"id": "sri-lavu-sri-krishna-devarayalu", "name": "Sri Lavu Sri Krishna Devarayalu", "role": "Vice-Chairman, Vignan Group & Member of Parliament", "category": "Leadership & Board of Directors", "badge": "Vice-Chairman & Member of Parliament", "image": "assets/team/square/Lavu_Sri_Krishna-boa.jpeg", "linkedin": "https://www.linkedin.com/in/lskdevarayalu", "email": "vicechairman@vignan.ac.in", "bio": "Sri Lavu Sri Krishna Devarayalu is an influential public policy leader and Member of Parliament representing Andhra Pradesh. With an advanced academic background in media, communication, and governance, he serves as Vice-Chairman of Vignan Group, spearheading youth innovation ecosystems, regional industrial partnerships, and deep-tech venture incubation hubs connecting coastal Andhra with global venture corridors.", "qualifications": ["Master\u2019s Degree in Media & Communication Management", "Member of Parliament (Lok Sabha)", "Member of Parliamentary Standing Committees on Education & Technology"], "focus_areas": ["Public-Private Partnerships (PPP)", "Regional Startup Ecosystems", "Policy Advocacy for Startups", "Global Venture Linkages"], "initiatives": "Championed central government funding approvals, industry-consortium alliances, and investor networks for deep-tech AgriTech and Biotech startups at Vignan TBI."}, {"id": "prof-p-nagabhushan", "name": "Prof. P. Nagabhushan", "role": "Vice-Chancellor, VFSTR & Chief Patron", "category": "Leadership & Academic Council", "badge": "Vice-Chancellor & Fellow IEEE", "image": "assets/team/square/vice-chancellor.jpg", "linkedin": "https://www.linkedin.com/company/vignantbi", "email": "vc@vignan.ac.in", "bio": "Prof. P. Nagabhushan is an internationally acclaimed computer scientist, academic administrator, and former Director of IIIT Allahabad. An IEEE Fellow and Fellow of the Institution of Engineers, his seminal research in pattern recognition, dimensionality reduction, and cognitive computing spans more than 400 scientific publications. At Vignan, he provides overarching academic research governance to translate university patents into commercial startups.", "qualifications": ["Ph.D. in Computer Science & Information Technology", "Former Director, Indian Institute of Information Technology (IIIT) Allahabad", "Fellow, IEEE; Fellow, Institution of Engineers (FIE); Fellow, IETE"], "focus_areas": ["Artificial Intelligence & Machine Vision", "Cognitive Data Architectures", "Patent Portfolio Structuring", "University R&D Commercialization"], "initiatives": "Established the Technology Transfer Office (TTO) and interdisciplinary research centers aligning university faculties with incubatee technical challenges."}, {"id": "dr-ms-raghunathan", "name": "Dr. M. S. Raghunathan", "role": "Registrar, VFSTR Deemed to be University", "category": "Executive Leadership", "badge": "Registrar & Statutory Head", "image": "assets/team/square/registrar.jpeg", "linkedin": "https://www.linkedin.com/company/vignantbi", "email": "registrar@vignan.ac.in", "bio": "Dr. M. S. Raghunathan oversees institutional governance, regulatory compliance, and university infrastructure enablement for Vignan TBI. With decades of executive experience in higher education management, he ensures seamless administrative synergy between university labs, intellectual property licensing, and incubator operations.", "qualifications": ["Ph.D. in Engineering / Management", "Senior Higher Education Administrator", "Statutory Secretary to the Board of Management"], "focus_areas": ["Institutional Compliance & Statutory Approvals", "Facility Sharing Protocols", "MoU & Joint Venture Formalization", "Campus Resource Deployment"], "initiatives": "Streamlined single-window campus access passes, laboratory resource credits, and IP licensing frameworks for all admitted incubatee founders."}, {"id": "prof-d-vijaya-ramu", "name": "Prof. D. Vijaya Ramu", "role": "Principal Investigator & Project Director", "category": "Principal Leadership & Scientific Direction", "badge": "PI & Dean of Academics", "image": "assets/team/square/vijayaramu.jpeg", "linkedin": "https://www.linkedin.com/company/vignantbi", "email": "dean_academics@vignan.ac.in", "bio": "Prof. D. Vijaya Ramu is the Principal Investigator and Project Director of Vignan TBI. A distinguished biotechnologist and Dean of Academics at VFSTR, he led the successful bid and establishment of the DST NIDHI inclusive TBI grant. He directs the 4 Centers of Excellence (Biotech, Renewable Energy, Waste Valorization, DeepTech) and mentors founders on bioprocess scaling and patent disclosures.", "qualifications": ["Ph.D. in Biotechnology & Molecular Biology", "Principal Investigator for DST NIDHI i-TBI Council Vadlamudi", "Senior Professor and Dean of Academics, VFSTR"], "focus_areas": ["Biotechnology Commercialization", "DST NIDHI Grant Protocols", "Molecular Diagnostics & Agri-Biotech", "Patent Disclosures & IPR Strategy"], "initiatives": "Directs the technical evaluation panel for NIDHI-PRAYAS grants and guides clinical trials and pilot validations for agri-biotech cohort startups."}, {"id": "prof-b-nageswara-rao", "name": "Prof. B. Nageswara Rao", "role": "Co-Principal Investigator (Co-PI)", "category": "Technical Leadership & Operations", "badge": "Co-PI & Senior Professor", "image": "assets/team/square/co-pi.jpg", "linkedin": "https://www.linkedin.com/company/vignantbi", "email": "copi_tbi@vignan.ac.in", "bio": "Prof. B. Nageswara Rao is the Co-Principal Investigator of Vignan TBI, driving technical infrastructure development, hardware prototyping labs, and clean energy pilot testbeds. With deep expertise in mechanical design and energy systems, he bridges academic engineering faculties with early-stage hardware founders.", "qualifications": ["Ph.D. in Mechanical / Energy Systems Engineering", "Co-Principal Investigator, DST NIDHI i-TBI", "Published 50+ Peer-Reviewed Technical Papers"], "focus_areas": ["Hardware Rapid Prototyping", "Renewable & Solar Energy Systems", "Thermal & Mechanical Fabrication", "Equipment Maintenance & Calibration"], "initiatives": "Supervises the Central Instrumentation Facility (CIF) and maker-space machinery, ensuring 24/7 access for incubatees developing physical prototypes."}, {"id": "mr-sandeep-s", "name": "Mr. Sandeep S", "role": "Chief Executive Officer (CEO)", "category": "Executive Management", "badge": "CEO & Venture Builder", "image": "assets/team/square/ceo.jpg", "linkedin": "https://www.linkedin.com/in/sandeep-tbi-vignan", "email": "ceo_tbi@vignan.ac.in", "bio": "Mr. Sandeep S is the Chief Executive Officer of Vignan TBI, leading cohort acceleration, investor syndication, and national incubator partnerships. An experienced venture builder and startup accelerator operator, he has facilitated over \u20b910 Crores in non-dilutive grants, seed rounds, and corporate pilots for deep-tech innovators across India.", "qualifications": ["Master of Business Administration (MBA)", "Certified Incubation Manager & Startup Mentor", "12+ Years Experience in Technology Commercialization & Venture Acceleration"], "focus_areas": ["Venture Capital & Angel Syndication", "NIDHI-PRAYAS, EIR & SSS Grant Execution", "Pitch Deck & Financial Model Structuring", "Corporate Pilot Partnerships"], "initiatives": "Formulated the 5-Stage Incubation Acceleration Roadmap, spearheaded the SPARK Innovation Summit, and built a network of 40+ accredited angel investors."}, {"id": "mr-abdul-r-owaisi", "name": "Mr. Abdul R. Owaisi", "role": "Incubation Manager", "category": "Incubation Management & Operations", "badge": "Incubation Desk Manager", "image": "assets/team/square/abdul_tbi_hd.jpg", "linkedin": "https://www.linkedin.com/in/abdul-owaisi-tbi", "email": "incubation_manager@vignan.ac.in", "bio": "Mr. Abdul R. Owaisi leads daily cohort operations, founder outreach, milestone reviews, and partner engagements at Vignan TBI. He coordinates national hackathons, bootcamp series, and incubation admission screening committees, ensuring early-stage founders receive timely operational and mentorship backing.", "qualifications": ["M.Tech / MBA in Technology Entrepreneurship", "Certified Startup Ecosystem Facilitator", "Program Lead for DST NIDHI-EIR Cohorts"], "focus_areas": ["Cohort Milestone Monitoring", "Startup Outreach & Dealflow Scouting", "Hackathons & Innovation Challenges", "Mentorship Scheduling & Matchmaking"], "initiatives": "Designed the cohort milestone tracking dashboard and coordinated over 25 founder bootcamps across coastal Andhra Pradesh."}, {"id": "ms-a-rose-evangiline", "name": "Ms. A. Rose Evangiline", "role": "Incubation Associate", "category": "Technical & Operations Desk", "badge": "Incubation Associate", "image": "assets/team/square/incb_assoc_1.jpg", "linkedin": "https://www.linkedin.com/company/vignantbi", "email": "assoc1_tbi@vignan.ac.in", "bio": "Ms. A. Rose Evangiline oversees administrative governance, statutory grant documentation, financial audit dossiers, and founder facilitation at Vignan TBI. She coordinates seamless fund disbursement compliance for NIDHI-PRAYAS and EIR recipients.", "qualifications": ["Post Graduate in Science & Management", "Specialist in Statutory Grant Documentation", "Expert in Academic-Industry Liaison"], "focus_areas": ["Grant Utilization Certification (UC/SE)", "Founder Compliance & Company Incorporation", "Cohort Reporting to DST Govt. of India", "Office Space & Facility Allocation"], "initiatives": "Standardized the compliance onboarding protocol for incoming cohort companies and manages the incubator's digital repository."}, {"id": "mr-k-pavan-kumar", "name": "Mr. K. Pavan Kumar", "role": "Incubation Associate", "category": "Technical & Operations Desk", "badge": "Technical Lab Associate", "image": "assets/team/square/incb_assoc_2.jpg", "linkedin": "https://www.linkedin.com/company/vignantbi", "email": "assoc2_tbi@vignan.ac.in", "bio": "Mr. K. Pavan Kumar manages hardware maker-space operations, 3D printing suites, IoT test equipment, and instrumentation coordination. He provides hands-on technical guidance to student and faculty founders during MVP prototype assembly.", "qualifications": ["B.Tech / M.Tech in Engineering", "Rapid Prototyping & CAD/CAM Certified", "Hardware Testbench Specialist"], "focus_areas": ["Maker-Space & 3D Prototyping", "Embedded Systems & Sensor Integration", "Hardware Testing & Calibration", "Technical Workshop Execution"], "initiatives": "Manages equipment runtime schedules across the 4 CoEs and assists founders in fabricating working physical demonstration units."}, {"id": "dr-bijay-kumar-sahu", "name": "Dr. Bijay Kumar Sahu", "role": "Head, NRDC - WIPO TISC", "category": "National Advisory Council", "badge": "IPR & Patent Advisor", "image": "assets/team/square/Dr_Bijay_Sahu.jpg", "linkedin": "https://www.linkedin.com/in/dr-bijay-kumar-sahu", "email": "ipr_advisory@vignan.ac.in", "bio": "Dr. Bijay Kumar Sahu is one of India's leading authorities on Intellectual Property Rights (IPR), technology transfer, and patent commercialization. Heading the NRDC-WIPO Technology and Innovation Support Center, he advises national R&D institutions, premier universities, and deep-tech incubators on securing global patents.", "qualifications": ["Ph.D. in Intellectual Property Management", "Head, NRDC Regional Office & WIPO TISC", "Advisor to Dept. of Science & Technology and Ministry of MSME"], "focus_areas": ["Prior Art Searches & Patent Landscaping", "Freedom to Operate (FTO) Valuations", "Technology Licensing & Royalty Structuring", "PCT International Patent Filings"], "initiatives": "Conducts quarterly patent clinics for Vignan TBI startups, resulting in over 15 provisional patent filings by incubatees."}, {"id": "dr-suresh-bhagavatula", "name": "Dr. Suresh Bhagavatula", "role": "Former Chair, NSRCEL, IIM Bangalore", "category": "National Advisory Council", "badge": "Startup Strategy Advisor", "image": "assets/team/square/Dr_Suresh_Bhagavatula.jpg", "linkedin": "https://www.linkedin.com/in/sureshbhagavatula", "email": "strategy_advisor@vignan.ac.in", "bio": "Dr. Suresh Bhagavatula is an eminent professor of entrepreneurship and former Chair of NSRCEL at IIM Bangalore. His research on social capital, entrepreneurial networks, and venture scale models has guided hundreds of high-impact founders across India.", "qualifications": ["Ph.D. in Entrepreneurship (Vrije Universiteit Amsterdam)", "Former Chairperson, NSRCEL, IIM Bangalore", "Senior Professor of Strategy & Entrepreneurship"], "focus_areas": ["Business Model Innovation", "Early-Stage Customer Discovery", "Network-Based Venture Scaling", "Social Enterprise Economics"], "initiatives": "Mentors founders on product-market fit validation and unit economic profitability prior to institutional venture capital rounds."}, {"id": "mr-dayakar-pushkar", "name": "Mr. Dayakar Pushkar", "role": "Managing Director, Dallas Venture Capital (DVC)", "category": "National Advisory Council", "badge": "Global Venture Capitalist", "image": "assets/team/square/Dayakar.jpg", "linkedin": "https://www.linkedin.com/in/dayakarpushkar", "email": "vc_advisor@vignan.ac.in", "bio": "Mr. Dayakar Pushkar is a Silicon Valley investor, technology visionary, and Managing Director at Dallas Venture Capital (DVC). Having founded and successfully exited multiple enterprise tech startups, he guides Vignan TBI cohort companies on cross-border expansion, institutional funding, and enterprise sales.", "qualifications": ["MS in Computer Engineering & Business Strategy", "Managing Director, Dallas Venture Capital (USA & India)", "Serial Entrepreneur with Successful Nasdaq / M&A Exits"], "focus_areas": ["Enterprise SaaS & DeepTech Scaling", "US-India Cross-Border Corridors", "Series A & Growth Capital Syndication", "B2B Enterprise Go-to-Market Strategy"], "initiatives": "Serves on the Investment Pitch Board and connects high-performing Vignan TBI startups with global angel syndicates and institutional VCs."}, {"id": "dr-balareddy-bheemareddy", "name": "Dr. Balareddy Bheemareddy", "role": "Founder & Managing Director, Provis Bio Labs", "category": "National Advisory Council", "badge": "Bio-Industrial Entrepreneur", "image": "assets/team/square/Dr_Bala_Reddy.jpg", "linkedin": "https://www.linkedin.com/in/dr-bala-reddy", "email": "biotech_advisor@vignan.ac.in", "bio": "Dr. Balareddy Bheemareddy is a serial life sciences entrepreneur and Managing Director of Provis Bio Labs. With extensive commercial experience in enzyme manufacturing, industrial fermentation, and microbial diagnostics, he guides bio-incubatees through pilot bio-refining and regulatory certifications.", "qualifications": ["Ph.D. in Biochemistry & Fermentation Science", "Founder & Managing Director, Provis Bio Labs Pvt Ltd", "Holder of Multiple Industrial Bioprocess Patents"], "focus_areas": ["Industrial Scale Fermentation", "Biopharmaceutical Regulatory Compliance", "Enzyme Engineering & Biocatalysis", "cGMP Manufacturing Setup"], "initiatives": "Provides industrial trial-run access at Provis Bio Labs' pilot manufacturing facility for Vignan TBI biotech cohort ventures."}, {"id": "mr-ashish-garde", "name": "Mr. Ashish Garde", "role": "Director, MAGIC Incubator & Past President, MACCIA", "category": "National Advisory Council", "badge": "MSME & Cluster Ecosystem Lead", "image": "assets/team/square/Ashish-Garde.jpg", "linkedin": "https://www.linkedin.com/in/ashishgarde", "email": "msme_advisor@vignan.ac.in", "bio": "Mr. Ashish Garde is an industrial ecosystem pioneer, Director at MAGIC Incubator, and Past President of the Maharashtra Chamber of Commerce, Industry & Agriculture (MACCIA). He specializes in linking grassroots hardware startups with tier-1 automotive, manufacturing, and industrial supply chains.", "qualifications": ["Engineering & Industrial Management Graduate", "Director, Marathwada Auto Cluster & MAGIC", "Past President, MACCIA"], "focus_areas": ["MSME Vendor Development & Supply Chains", "Industrial Cluster Innovation", "Hardware Tooling & Mass Production", "State & Central Industry Incentives"], "initiatives": "Facilitates commercial pilot procurement orders between established manufacturing MSMEs and Vignan TBI hardware innovators."}, {"id": "ms-ashwathy-venugopal", "name": "Ms. Ashwathy Venugopal", "role": "Lead, Headstart Andhra & KECTIL USA Fellow", "category": "National Advisory Council", "badge": "Community & Ecosystem Lead", "image": "assets/team/square/Ashwathy_Venugopal.jpg", "linkedin": "https://www.linkedin.com/in/ashwathy-venugopal", "email": "community_advisor@vignan.ac.in", "bio": "Ms. Ashwathy Venugopal is a passionate community builder, global youth leadership fellow, and regional lead for Headstart Network Foundation. She catalyzes grassroots startup communities, women-led ventures, and regional demo days connecting emerging founders with mentors.", "qualifications": ["Fellow, KECTIL Youth Leadership Program (Atlanta, USA)", "Regional Lead, Headstart Andhra Pradesh", "Co-Founder, Social Innovation Initiatives"], "focus_areas": ["Startup Community Building", "Women in Tech & Social Innovation", "Founder Pitch Coaching", "Regional Startup Networking"], "initiatives": "Organizes monthly Founder Mixer nights, Women Startup Roundtables, and investor pitch clinics at Vignan TBI."}, {"id": "dst-representative", "name": "DST Representative", "role": "Scientist, Department of Science & Technology (DST)", "category": "National Advisory Council", "badge": "Statutory Observer & DST Nominee", "image": "assets/team/square/DST_Representative.jpg", "linkedin": "https://dst.gov.in", "email": "dst_observer@vignan.ac.in", "bio": "The DST Representative serves as the governmental observer on the Vignan TBI Governing Council, ensuring strict adherence to NIDHI guidelines, milestone compliance, and national incubator benchmarking standards established by the Ministry of Science and Technology.", "qualifications": ["Senior Scientist, Department of Science & Technology", "Govt. of India Nominee on National Incubation Boards", "Expert in National Science & Technology Entrepreneurship Policy"], "focus_areas": ["DST NIDHI Scheme Guidelines & Compliance", "Grant Governance & Fund Auditing", "National Innovation Index Benchmarking", "Statutory Policy Alignment"], "initiatives": "Reviews bi-annual cohort graduation rates, financial allocations, and national intellectual property output of Vignan TBI."}]};
+
+    async function loadMemberProfile() {
+      const params = new URLSearchParams(window.location.search);
+      const memberId = params.get('id') || 'mr-sandeep-s';
+
+      let data = teamDataset;
+      try {
+        const resp = await fetch('data/team.json');
+        if (resp.ok) {
+          data = await resp.json();
+        }
+      } catch (e) {
+        console.warn('Fetch failed (file:// protocol), using embedded dataset fallback.');
+      }
+
+      const member = data.members.find(m => m.id === memberId) || data.members[0];
+
+      // Update meta & titles
+      document.title = `${member.name} | Leadership & Team | Vignan TBI`;
+      const descEl = document.getElementById('pageDesc');
+      if (descEl) descEl.content = `Profile of ${member.name}, ${member.role} at Vignan TBI.`;
+
+      // Update Breadcrumb & Header
+      document.getElementById('breadcrumbName').textContent = member.name;
+      document.getElementById('memberName').textContent = member.name;
+      document.getElementById('memberRole').textContent = member.role;
+      document.getElementById('memberCategory').textContent = member.category;
+      document.getElementById('memberBadge').textContent = member.badge;
+      document.getElementById('memberBio').textContent = member.bio;
+      document.getElementById('memberInitiatives').textContent = member.initiatives;
+
+      // Update Image
+      const imgEl = document.getElementById('memberImg');
+      imgEl.src = member.image;
+      imgEl.alt = member.name;
+
+      // Update Action Links
+      document.getElementById('memberLinkedin').href = member.linkedin;
+      document.getElementById('memberEmail').href = `mailto:${member.email}`;
+
+      // Render Qualifications
+      const qualsContainer = document.getElementById('qualificationsList');
+      qualsContainer.innerHTML = member.qualifications.map(q => `
+        <li class="flex items-start gap-2">
+          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+          <span>${q}</span>
+        </li>
+      `).join('');
+
+      // Render Focus Areas
+      const focusContainer = document.getElementById('focusAreasList');
+      focusContainer.innerHTML = member.focus_areas.map(f => `
+        <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold border border-slate-200/80">${f}</span>
+      `).join('');
+
+      // Render Peer Navigation Links
+      const peersContainer = document.getElementById('peerLinksContainer');
+      peersContainer.innerHTML = data.members.map(m => `
+        <a href="member.html?id=${m.id}" class="px-3 py-1.5 rounded-xl ${m.id === member.id ? 'bg-brand-orange text-white font-bold shadow-xs' : 'bg-slate-50 hover:bg-orange-50 hover:text-brand-orange text-slate-700 font-semibold'} border border-slate-200 text-xs transition">
+          ${m.name}
+        </a>
+      `).join('');
+
+      // Re-initialize Lucide Icons
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadMemberProfile);
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
