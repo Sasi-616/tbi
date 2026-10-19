@@ -27,6 +27,105 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1200);
   }
 
+  // Quick Text Announcement Ticker Cycler
+  const quickTickerEl = document.getElementById('quickTextTicker');
+  if (quickTickerEl) {
+    const announcements = [
+      '🚀 Applications Open: DST NIDHI PRAYAS Grants (Up to ₹10 Lakhs) & EIR Stipends (Cohort 2026)',
+      '🔬 State-of-the-Art Labs: Supercritical CO2, Biotech Diagnostics & IoT Makerspace at VFSTR',
+      '💡 40+ DeepTech Startups Scaled with Dedicated University Research Labs & Seed Funding',
+      '📍 Visit Us: 2nd Floor, Nagarjuna Bhavan, Vadlamudi, Guntur · Call +91 85008 97550'
+    ];
+    let announcementIndex = 0;
+    setInterval(() => {
+      announcementIndex = (announcementIndex + 1) % announcements.length;
+      quickTickerEl.style.transition = 'opacity 0.3s ease';
+      quickTickerEl.style.opacity = '0';
+      setTimeout(() => {
+        quickTickerEl.textContent = announcements[announcementIndex];
+        quickTickerEl.style.opacity = '1';
+      }, 300);
+    }, 4500);
+  }
+
+  // Synchronized Hero Innovation Slider
+  const heroSlider = document.getElementById('heroSlider');
+  if (heroSlider) {
+    const bgSlides = heroSlider.querySelectorAll('.hero-slide-bg');
+    const textSlides = heroSlider.querySelectorAll('.hero-text-slide');
+    const dots = heroSlider.querySelectorAll('.hero-slider-dot');
+    const counter = document.getElementById('heroSlideCounter');
+    const totalSlides = bgSlides.length;
+    let currentSlide = 0;
+    let slideTimer = null;
+
+    const setSlide = (index) => {
+      currentSlide = (index + totalSlides) % totalSlides;
+      
+      // Update background images
+      bgSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlide);
+      });
+
+      // Update text slides
+      textSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlide);
+        if (i === currentSlide) {
+          slide.style.display = 'block';
+        } else {
+          slide.style.display = 'none';
+        }
+      });
+
+      // Update slider dot indicators
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+        if (i === currentSlide) {
+          dot.classList.remove('w-2.5', 'bg-white/40');
+          dot.classList.add('w-8', 'bg-brand-orange');
+        } else {
+          dot.classList.remove('w-8', 'bg-brand-orange');
+          dot.classList.add('w-2.5', 'bg-white/40');
+        }
+      });
+
+      // Update counter
+      if (counter) {
+        counter.textContent = `0${currentSlide + 1} / 0${totalSlides}`;
+      }
+    };
+
+    const startAutoSlide = () => {
+      stopAutoSlide();
+      slideTimer = setInterval(() => {
+        setSlide(currentSlide + 1);
+      }, 5500);
+    };
+
+    const stopAutoSlide = () => {
+      if (slideTimer) {
+        clearInterval(slideTimer);
+        slideTimer = null;
+      }
+    };
+
+    // Attach click listeners to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        setSlide(index);
+        startAutoSlide();
+      });
+    });
+
+    // Pause on hover
+    heroSlider.addEventListener('mouseenter', stopAutoSlide);
+    heroSlider.addEventListener('mouseleave', startAutoSlide);
+
+    // Initial setup
+    setSlide(0);
+    startAutoSlide();
+  }
+
   // 2. Sticky Navigation & Header Transitions
   const siteHeader = document.querySelector('.site-header');
   if (siteHeader) {

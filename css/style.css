@@ -103,6 +103,54 @@ body {
   animation: pulseGlow 2.5s infinite;
 }
 
+/* Top Quick Announcement Strip */
+.top-announcement-strip {
+  background-color: #0b0f19;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Hero Slider Backgrounds & Text Transition Fixes */
+.hero-slide-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, transform 6s ease-out;
+  transform: scale(1.03);
+}
+
+.hero-slide-bg.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.hero-text-slide {
+  display: none !important;
+}
+
+.hero-text-slide.active {
+  display: block !important;
+  animation: heroTextSlideIn 0.5s ease-out forwards;
+}
+
+@keyframes heroTextSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-slider-dot.active {
+  background-color: #FF6F00 !important;
+  width: 2rem !important;
+}
+
 /* Floating Capsule Container Navbar (Strictly Pill-Only White, No Extending Background) */
 .site-header,
 .site-header.scrolled {
