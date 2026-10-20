@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const quickTickerEl = document.getElementById('quickTextTicker');
   if (quickTickerEl) {
     const announcements = [
-      '🚀 Applications Open: DST NIDHI PRAYAS Grants (Up to ₹10 Lakhs) & EIR Stipends (Cohort 2026)',
-      '🔬 State-of-the-Art Labs: Supercritical CO2, Biotech Diagnostics & IoT Makerspace at VFSTR',
-      '💡 40+ DeepTech Startups Scaled with Dedicated University Research Labs & Seed Funding',
-      '📍 Visit Us: 2nd Floor, Nagarjuna Bhavan, Vadlamudi, Guntur · Call +91 85008 97550'
+      'Applications Open: DST NIDHI PRAYAS Grants (Up to ₹10 Lakhs) & EIR Stipends (Cohort 2026)',
+      'State-of-the-Art Labs: Supercritical CO2, Biotech Diagnostics & IoT Makerspace at VFSTR',
+      '40+ DeepTech Startups Scaled with Dedicated University Research Labs & Seed Funding',
+      'Visit Us: 2nd Floor, Nagarjuna Bhavan, Vadlamudi, Guntur · Call +91 85008 97550'
     ];
     let announcementIndex = 0;
     setInterval(() => {

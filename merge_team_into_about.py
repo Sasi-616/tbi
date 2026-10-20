@@ -40,7 +40,7 @@ about_hero_new = '''<!-- Hero Banner (Pure Transparent, Pristine Light Mode) -->
           ABOUT VFSTR TBI COUNCIL · SECTION 8 NON-PROFIT
         </span>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
-          An Incubator with a Premier University Under It
+          An Incubator Associated with a Premier University
         </h1>
         <p class="text-gray-100 text-sm sm:text-base leading-relaxed max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
           VFSTR TBI Council empowers innovators, students, and researchers across Andhra Pradesh with world-class prototyping laboratories, visionary governance, and dedicated seed funding.

@@ -25,3 +25,7 @@ ENV/
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Large Raw Source Files (>100MB exceeds GitHub push limits)
+assets/TBI BOOK.pdf
+

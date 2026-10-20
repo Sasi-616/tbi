@@ -47,50 +47,50 @@
       "initiatives": "Championed central government funding approvals, industry-consortium alliances, and investor networks for deep-tech AgriTech and Biotech startups at Vignan TBI."
     },
     {
-      "id": "prof-p-nagabhushan",
-      "name": "Prof. P. Nagabhushan",
-      "role": "Vice-Chancellor, VFSTR & Chief Patron",
+      "id": "prof-kv-krishna-kishore",
+      "name": "Prof. K. V. Krishna Kishore",
+      "role": "Vice-Chancellor (i/c), VFSTR & Patron",
       "category": "Leadership & Academic Council",
-      "badge": "Vice-Chancellor & Fellow IEEE",
-      "image": "assets/team/square/vice-chancellor.jpg",
+      "badge": "Vice-Chancellor (i/c)",
+      "image": "assets/team/square/vc_krishnakishore.jpg",
       "linkedin": "https://www.linkedin.com/company/vignantbi",
       "email": "vc@vignan.ac.in",
-      "bio": "Prof. P. Nagabhushan is an internationally acclaimed computer scientist, academic administrator, and former Director of IIIT Allahabad. An IEEE Fellow and Fellow of the Institution of Engineers, his seminal research in pattern recognition, dimensionality reduction, and cognitive computing spans more than 400 scientific publications. At Vignan, he provides overarching academic research governance to translate university patents into commercial startups.",
+      "bio": "Prof. K. V. Krishna Kishore is the Vice-Chancellor (i/c) of VFSTR Deemed to be University and former Dean of the School of Computing and Informatics. A visionary academic administrator, he drives institutional excellence across teaching, advanced research, and university innovation. Under his leadership, Vignan focuses on NEP-2020 alignment, global ABET accreditation, and dynamic commercialization pipelines connecting university laboratories with Vignan TBI's incubation programs.",
       "qualifications": [
-        "Ph.D. in Computer Science & Information Technology",
-        "Former Director, Indian Institute of Information Technology (IIIT) Allahabad",
-        "Fellow, IEEE; Fellow, Institution of Engineers (FIE); Fellow, IETE"
+        "Ph.D. in Computer Science & Engineering",
+        "Vice-Chancellor (i/c) & Dean of Computing and Informatics, VFSTR",
+        "Distinguished Academician & Research Leader in Advanced Computing"
       ],
       "focus_areas": [
-        "Artificial Intelligence & Machine Vision",
-        "Cognitive Data Architectures",
-        "Patent Portfolio Structuring",
-        "University R&D Commercialization"
+        "Computing & Advanced Informatics",
+        "Institutional Governance & NEP-2020",
+        "Academic Innovation & Research Excellence",
+        "University-Incubator R&D Synergy"
       ],
-      "initiatives": "Established the Technology Transfer Office (TTO) and interdisciplinary research centers aligning university faculties with incubatee technical challenges."
+      "initiatives": "Championed university R&D commercialization policies, student innovation fellowships, and state-of-the-art lab infrastructure support for deep-tech incubatees."
     },
     {
-      "id": "dr-ms-raghunathan",
-      "name": "Dr. M. S. Raghunathan",
+      "id": "prof-pmv-rao",
+      "name": "Prof. P. M. V. Rao",
       "role": "Registrar, VFSTR Deemed to be University",
       "category": "Executive Leadership",
       "badge": "Registrar & Statutory Head",
-      "image": "assets/team/square/registrar.jpeg",
+      "image": "assets/team/square/registrar_pmvrao.jpg",
       "linkedin": "https://www.linkedin.com/company/vignantbi",
       "email": "registrar@vignan.ac.in",
-      "bio": "Dr. M. S. Raghunathan oversees institutional governance, regulatory compliance, and university infrastructure enablement for Vignan TBI. With decades of executive experience in higher education management, he ensures seamless administrative synergy between university labs, intellectual property licensing, and incubator operations.",
+      "bio": "Prof. P. M. V. Rao is the Registrar of VFSTR Deemed to be University. An eminent professor with extensive executive and academic leadership, he oversees statutory governance, university compliance, and institutional infrastructure enablement for Vignan TBI. He spearheads seamless administrative coordination between university faculties, laboratories, and startup incubation operations.",
       "qualifications": [
-        "Ph.D. in Engineering / Management",
-        "Senior Higher Education Administrator",
-        "Statutory Secretary to the Board of Management"
+        "Ph.D. in Mechanical Engineering",
+        "Registrar & Senior Professor, VFSTR Deemed to be University",
+        "Member Secretary to Board of Management & Academic Council"
       ],
       "focus_areas": [
-        "Institutional Compliance & Statutory Approvals",
-        "Facility Sharing Protocols",
-        "MoU & Joint Venture Formalization",
-        "Campus Resource Deployment"
+        "Statutory Administration & Compliance",
+        "University Infrastructure & Laboratory Enablement",
+        "MoU & Joint Venture Protocols",
+        "Academic-Incubator Resource Sharing"
       ],
-      "initiatives": "Streamlined single-window campus access passes, laboratory resource credits, and IP licensing frameworks for all admitted incubatee founders."
+      "initiatives": "Streamlined fast-track single-window approvals, university resource access, and administrative support systems for Vignan TBI startup founders."
     },
     {
       "id": "prof-d-vijaya-ramu",
@@ -167,7 +167,7 @@
       "role": "Incubation Manager",
       "category": "Incubation Management & Operations",
       "badge": "Incubation Desk Manager",
-      "image": "assets/team/square/abdul_tbi_hd.jpg",
+      "image": "assets/team/square/abdul_tbi.jpeg",
       "linkedin": "https://www.linkedin.com/in/abdul-owaisi-tbi",
       "email": "incubation_manager@vignan.ac.in",
       "bio": "Mr. Abdul R. Owaisi leads daily cohort operations, founder outreach, milestone reviews, and partner engagements at Vignan TBI. He coordinates national hackathons, bootcamp series, and incubation admission screening committees, ensuring early-stage founders receive timely operational and mentorship backing.",
