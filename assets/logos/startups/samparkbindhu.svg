@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="grad-samp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="8" width="44" height="44" rx="12" fill="url(#grad-samp)"/>
+  <circle cx="28" cy="24" r="6" fill="#ffffff"/>
+  <circle cx="21" cy="36" r="4.5" fill="#ffffff" opacity="0.85"/>
+  <circle cx="35" cy="36" r="4.5" fill="#ffffff" opacity="0.85"/>
+  <line x1="28" y1="24" x2="21" y2="36" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="28" y1="24" x2="35" y2="36" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="60" y="32" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="18" fill="#0F172A">SamparkBindhu</text>
+  <text x="60" y="46" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="9" fill="#D97706" letter-spacing="1.5">AGRITECH B2B PLATFORM</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="grad-org" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16A34A"/>
+      <stop offset="100%" stop-color="#65A30D"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="8" width="44" height="44" rx="12" fill="url(#grad-org)"/>
+  <circle cx="28" cy="30" r="13" fill="#ffffff" opacity="0.2"/>
+  <path d="M22 36 C22 26 34 22 34 22 C34 22 34 34 24 36 Z" fill="#ffffff"/>
+  <text x="60" y="32" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="20" fill="#0F172A">Orgawin</text>
+  <text x="60" y="46" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="9" fill="#16A34A" letter-spacing="1.5">BIO-STIMULANTS & INPUTS</text>
+</svg>

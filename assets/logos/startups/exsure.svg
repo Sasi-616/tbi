@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="grad-exs" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="8" width="44" height="44" rx="12" fill="url(#grad-exs)"/>
+  <circle cx="28" cy="30" r="12" stroke="#ffffff" stroke-width="2.5" fill="none"/>
+  <circle cx="28" cy="30" r="5" fill="#38BDF8"/>
+  <text x="60" y="32" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="20" fill="#0F172A" letter-spacing="0.5">EXSURE</text>
+  <text x="60" y="46" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="9" fill="#7C3AED" letter-spacing="1.5">TARGETED NANOTHERAPEUTICS</text>
+</svg>

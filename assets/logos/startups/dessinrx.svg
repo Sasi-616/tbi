@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="grad-drx" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E11D48"/>
+      <stop offset="100%" stop-color="#9333EA"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="8" width="44" height="44" rx="12" fill="url(#grad-drx)"/>
+  <path d="M20 20 L36 30 L20 40 Z" fill="#ffffff" opacity="0.9"/>
+  <circle cx="28" cy="30" r="4" fill="#ffffff"/>
+  <text x="60" y="32" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="20" fill="#0F172A" letter-spacing="-0.5">Dessin<tspan fill="#E11D48">Rx</tspan></text>
+  <text x="60" y="46" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="9" fill="#64748B" letter-spacing="1.5">HEALTHCARE · SURGICAL AI</text>
+</svg>

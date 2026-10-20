@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="grad-tp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="8" width="44" height="44" rx="12" fill="url(#grad-tp)"/>
+  <path d="M30 16 L22 30 L27 30 L25 44 L34 28 L29 28 Z" fill="#ffffff"/>
+  <text x="60" y="32" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="19" fill="#0F172A">TeamPower</text>
+  <text x="60" y="46" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="9" fill="#0284C7" letter-spacing="1.5">CLEAN EV INFRASTRUCTURE</text>
+</svg>
