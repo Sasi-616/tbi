@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'Applications Open: DST NIDHI PRAYAS Grants (Up to ₹10 Lakhs) & EIR Stipends (Cohort 2026)',
       'State-of-the-Art Labs: Supercritical CO2, Biotech Diagnostics & IoT Makerspace at VFSTR',
       '40+ DeepTech Startups Scaled with Dedicated University Research Labs & Seed Funding',
-      'Visit Us: 2nd Floor, Nagarjuna Bhavan, Vadlamudi, Guntur · Call +91 85008 97550'
+      'Visit Us: 2nd Floor, Nagarjuna Bhavan, Vadlamudi, Guntur · Call +91 83099 64052'
     ];
     let announcementIndex = 0;
     setInterval(() => {
@@ -70,37 +70,91 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 3. Mobile Navigation Drawer
+  // 3. Mobile Navigation Drawer & Backdrop System
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
-  const mobileDrawer = document.getElementById('mobileDrawer');
-  const closeDrawer = document.getElementById('closeDrawer');
+  const navBackdrop = document.getElementById('navBackdrop');
+  const closeNavMenu = document.getElementById('closeNavMenu');
 
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      mobileToggle.classList.toggle('active');
-      navMenu.classList.toggle('open');
+  const openMobileNav = () => {
+    if (navMenu) navMenu.classList.add('open');
+    if (mobileToggle) mobileToggle.classList.add('active');
+    if (navBackdrop) navBackdrop.classList.add('open');
+    document.body.classList.add('overflow-hidden');
+  };
+
+  const closeMobileNav = () => {
+    if (navMenu) navMenu.classList.remove('open');
+    if (mobileToggle) mobileToggle.classList.remove('active');
+    if (navBackdrop) navBackdrop.classList.remove('open');
+    document.body.classList.remove('overflow-hidden');
+  };
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (navMenu && navMenu.classList.contains('open')) {
+        closeMobileNav();
+      } else {
+        openMobileNav();
+      }
     });
+  }
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileToggle.classList.remove('active');
-        navMenu.classList.remove('open');
+  if (closeNavMenu) {
+    closeNavMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeMobileNav();
+    });
+  }
+
+  if (navBackdrop) {
+    navBackdrop.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeMobileNav();
+    });
+  }
+
+  // Handle links and buttons inside mobile navigation drawer
+  if (navMenu) {
+    navMenu.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', () => {
+        const href = el.getAttribute('href');
+        if (el.id === 'closeNavMenu' || el.hasAttribute('data-open-modal')) {
+          closeMobileNav();
+          return;
+        }
+
+        if (href) {
+          const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+          const linkPath = href.split('#')[0];
+          const hasHash = href.includes('#');
+
+          // If link points to current page or is pure hash
+          if (href.startsWith('#') || linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
+            if (hasHash) {
+              const hashId = href.split('#')[1];
+              const targetEl = document.getElementById(hashId);
+              if (targetEl) {
+                targetEl.scrollIntoView({ behavior: 'smooth' });
+              }
+            }
+            closeMobileNav();
+          } else {
+            // For cross-page navigation, close drawer after navigation has initiated
+            setTimeout(closeMobileNav, 300);
+          }
+        }
       });
     });
   }
 
-  if (mobileToggle && mobileDrawer) {
-    mobileToggle.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('translate-x-full');
-    });
-  }
-
-  if (closeDrawer && mobileDrawer) {
-    closeDrawer.addEventListener('click', () => {
-      mobileDrawer.classList.add('translate-x-full');
-    });
-  }
+  // Close drawer on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu && navMenu.classList.contains('open')) {
+      closeMobileNav();
+    }
+  });
 
   // 4. Floating Action Dock & Scroll Progress Ring
   const scrollProgressBtn = document.getElementById('scrollProgressBtn');
@@ -599,7 +653,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     setTimeout(() => {
-      const waUrl = `https://wa.me/918500897550?text=${waText}`;
+      const waUrl = `https://wa.me/918309964052?text=${waText}`;
       window.open(waUrl, '_blank');
       const modal = form.closest('.modal-overlay');
       if (modal) closeModal(modal);

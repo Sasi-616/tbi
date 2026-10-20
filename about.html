@@ -63,12 +63,12 @@
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
       <!-- Mobile View (< md) -->
       <div class="flex items-center justify-between text-[11px] gap-2 w-full md:hidden">
-        <a href="tel:+918500897550" class="flex items-center gap-1.5 text-slate-900 font-bold truncate">
+        <a href="tel:+918309964052" class="flex items-center gap-1.5 text-slate-900 font-bold truncate">
           <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-orange shrink-0"></i>
-          <span>+91 85008 97550</span>
+          <span>+91 83099 64052</span>
         </a>
         <div class="flex items-center gap-2 shrink-0">
-          <span class="text-brand-orange font-bold">DST NIDHI (₹4.50 Cr)</span>
+          <span class="text-brand-orange font-bold">DST NIDHI Supported</span>
           <span class="text-slate-300">|</span>
           <a href="contact.html" class="text-slate-600 hover:text-brand-orange font-medium underline">Visit</a>
         </div>
@@ -84,13 +84,13 @@
           <span class="text-slate-300">|</span>
           <span class="flex items-center gap-1.5">
             <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-orange shrink-0"></i>
-            <span>Helpline: +91 85008 97550 / vfstrtbi@vignan.ac.in</span>
+            <span>Helpline: +91 83099 64052 / vfstrtbi@vignan.ac.in</span>
           </span>
         </div>
         <div class="flex items-center gap-3.5 shrink-0">
           <span class="text-brand-orange font-bold flex items-center gap-1.5">
             <i data-lucide="award" class="w-3.5 h-3.5 text-brand-orange"></i>
-            <span>DST NIDHI Supported (₹4.50 Cr)</span>
+            <span>DST NIDHI Supported</span>
           </span>
           <span class="text-slate-300">|</span>
           <a href="about.html" class="text-slate-600 hover:text-brand-orange transition">About Us</a>
@@ -148,35 +148,48 @@
 
       </div>
     </div>
+  </header>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="navMenu" class="nav-menu-drawer xl:hidden">
-      <div class="w-full pb-3 border-b border-gray-100 flex items-center justify-between">
-        <a href="index.html" class="inline-block" aria-label="Vignan TBI Home">
-          <img src="assets/Logo.png" alt="Vignan TBI Logo" class="h-10 sm:h-11 w-auto object-contain">
-        </a>
-      </div>
-      <a href="about.html" class="nav-link text-base font-bold py-1 w-full">About Us</a>
+  <!-- Mobile Navigation Backdrop Overlay (Direct Body Child for Flawless Stacking) -->
+  <div id="navBackdrop" class="nav-backdrop"></div>
+
+  <!-- Mobile Navigation Drawer (Independent Full-Viewport Container) -->
+  <div id="navMenu" class="nav-menu-drawer xl:hidden">
+    <!-- Drawer Header with Logo & Close Button -->
+    <div class="w-full pb-3 border-b border-gray-100 flex items-center justify-between shrink-0">
+      <a href="index.html" class="inline-block" aria-label="Vignan TBI Home">
+        <img src="assets/Logo.png" alt="Vignan TBI Logo" class="h-9 sm:h-10 w-auto object-contain">
+      </a>
+      <button id="closeNavMenu" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition" aria-label="Close Navigation">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Navigation Links Container -->
+    <div class="flex flex-col gap-1 w-full my-2 overflow-y-auto">
+      <a href="index.html" class="nav-link text-base font-bold py-1 w-full">Home</a>
+      <a href="about.html" class="nav-link text-base font-bold py-1 w-full text-brand-orange">About Us</a>
       <a href="about.html#team" class="nav-link text-base font-bold py-1 w-full">Team & Governance</a>
       <a href="programs.html" class="nav-link text-base font-bold py-1 w-full">Focus Sectors</a>
       <a href="process.html" class="nav-link text-base font-bold py-1 w-full">Incubation Process</a>
       <a href="facilities.html" class="nav-link text-base font-bold py-1 w-full">Lab Facilities</a>
       <a href="startups.html" class="nav-link text-base font-bold py-1 w-full">Startups</a>
       <a href="events.html" class="nav-link text-base font-bold py-1 w-full">Events & Spark</a>
-      <a href="apply.html" class="nav-link text-base font-bold py-1 w-full">Apply for Incubation</a>
       <a href="contact.html" class="nav-link text-base font-bold py-1 w-full">Contact & Location</a>
-      <div class="w-full pt-4 mt-auto border-t border-gray-100 space-y-3">
-        <a href="apply.html" class="w-full py-3 bg-brand-orange text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg">
-          <i data-lucide="rocket" class="w-4 h-4"></i>
-          <span>Apply for Incubation</span>
-        </a>
-        <a href="tel:+918500897550" class="w-full py-2.5 bg-gray-100 text-gray-800 text-xs font-bold rounded-xl flex items-center justify-center gap-2">
-          <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-orange"></i>
-          <span>+91 85008 97550</span>
-        </a>
-      </div>
     </div>
-  </header>
+
+    <!-- Action Buttons at Bottom -->
+    <div class="w-full pt-4 mt-auto border-t border-gray-100 space-y-2.5 shrink-0">
+      <button data-open-modal="modal-apply-incubation" class="w-full py-3 bg-brand-orange hover:bg-brand-accent text-white text-sm font-bold rounded-xl flex items-center justify-center gap-2 shadow-lg transition">
+        <i data-lucide="rocket" class="w-4 h-4"></i>
+        <span>Apply for Incubation</span>
+      </button>
+      <a href="tel:+918309964052" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition">
+        <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-orange"></i>
+        <span>+91 83099 64052</span>
+      </a>
+    </div>
+  </div>
 
   <!-- Hero Banner (Pure Transparent, Pristine Light Mode) -->
   <section class="relative min-h-[480px] flex items-end pb-16 -mt-28 pt-36 lg:pt-44 overflow-hidden bg-transparent text-white">
@@ -221,13 +234,13 @@
             The incubator functions from the 2nd Floor of Nagarjuna Bhavan at Vignan’s Foundation for Science, Technology and Research (Deemed to be University), Vadlamudi, Guntur. Surrounding it are 4 Centres of Excellence and 15 research centers.
           </p>
           <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-            VFSTR TBI Council, the non-profit Section 8 company housing the incubator, was incorporated on <strong>June 09, 2022</strong> (CIN: U73100AP2022NPL121922). In 2023, the Department of Science & Technology (DST), Government of India sanctioned <strong>₹4.50 Crore</strong> for three years under the NIDHI inclusive TBI scheme to build out high-throughput prototyping labs and seed support pipelines.
+            VFSTR TBI Council, the non-profit Section 8 company housing the incubator, was incorporated on <strong>June 09, 2022</strong> (CIN: U73100AP2022NPL121922). In 2023, the Department of Science & Technology (DST), Government of India sanctioned the incubator under the prestigious NIDHI inclusive TBI scheme to build out high-throughput prototyping labs and seed support pipelines.
           </p>
           
           <div class="grid grid-cols-2 gap-4 pt-2">
             <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200">
-              <span class="text-2xl font-black text-brand-orange">₹4.50 Cr</span>
-              <p class="text-xs text-gray-500 font-semibold mt-1">DST NIDHI Sanction</p>
+              <span class="text-2xl font-black text-brand-orange">10,000+</span>
+              <p class="text-xs text-gray-500 font-semibold mt-1">Sq. Ft. Innovation Hub</p>
             </div>
             <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200">
               <span class="text-2xl font-black text-gray-900">100+</span>
@@ -1010,7 +1023,7 @@
             </p>
             <p class="flex items-center gap-2">
               <i data-lucide="phone" class="w-4 h-4 text-brand-orange shrink-0"></i>
-              <span>+91 85008 97550 / +91 863 2344700</span>
+              <span>+91 83099 64052 / +91 863 2344700</span>
             </p>
           </div>
 
@@ -1025,7 +1038,7 @@
             <a href="mailto:vfstrtbi@vignan.ac.in" class="w-8 h-8 rounded-lg bg-white hover:bg-[#EA4335] text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-xs group" aria-label="Email" title="Send Official Email">
               <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </a>
-            <a href="https://wa.me/918500897550" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white hover:bg-[#25D366] text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-xs group" aria-label="WhatsApp" title="WhatsApp Incubation Desk">
+            <a href="https://wa.me/918309964052" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white hover:bg-[#25D366] text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-xs group" aria-label="WhatsApp" title="WhatsApp Incubation Desk">
               <svg class="w-4 h-4 fill-current transition-colors" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.42 1.01 2.59c.13.17 1.75 2.67 4.24 3.75.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.18-.47-.31z"/></svg>
             </a>
           </div>

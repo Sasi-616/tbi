@@ -281,29 +281,90 @@ body {
   font-weight: 700;
 }
 
-/* Mobile Menu Drawer */
-@media (max-width: 1024px) {
-  .nav-menu-drawer {
-    position: fixed;
-    top: 80px;
-    right: -100%;
-    width: 320px;
-    height: calc(100vh - 80px);
-    background-color: #FFFFFF;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 32px 24px;
-    box-shadow: -6px 0 24px rgba(0, 0, 0, 0.14);
-    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    gap: 18px;
-    overflow-y: auto;
-    z-index: 1500;
-  }
-
-  .nav-menu-drawer.open {
-    right: 0;
-  }
+/* Mobile Menu Drawer & Backdrop System */
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
 }
+
+.nav-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto !important;
+}
+
+.nav-menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(340px, 86vw);
+  height: 100vh;
+  height: 100dvh;
+  background-color: #FFFFFF;
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 20px 20px 28px 20px;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25);
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 8px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.nav-menu-drawer.open {
+  transform: translate3d(0, 0, 0);
+  pointer-events: auto !important;
+}
+
+.nav-menu-drawer.open * {
+  pointer-events: auto !important;
+}
+
+.nav-menu-drawer.open a,
+.nav-menu-drawer.open button {
+  touch-action: manipulation !important;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 111, 0, 0.1);
+}
+
+.nav-menu-drawer .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  border-radius: 12px !important;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1E293B !important;
+  background-color: transparent;
+  transition: all 0.2s ease;
+  touch-action: manipulation;
+}
+
+.nav-menu-drawer .nav-link:hover,
+.nav-menu-drawer .nav-link:active {
+  background-color: rgba(255, 111, 0, 0.08);
+  color: #FF6F00 !important;
+}
+
+.nav-menu-drawer .nav-link.active {
+  background-color: rgba(255, 111, 0, 0.12);
+  color: #FF6F00 !important;
+  font-weight: 800;
+}
+
 
 .mobile-toggle span {
   display: block;
